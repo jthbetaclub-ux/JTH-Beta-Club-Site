@@ -12,10 +12,9 @@ const NAV = [
 ];
 
 const STATS = [
-  { n: '40+', label: 'Organizations served' },
-  { n: '4,200', label: 'Hours volunteered / yr' },
-  { n: '$8,500', label: 'Raised for charity / yr' },
-  { n: '1991', label: 'Chapter chartered' },
+  { n: '50+', label: 'Organizations served' },
+  { n: '3,000', label: 'Hours volunteered / yr' },
+  { n: '$4,000', label: 'Raised for charity / yr' },
 ];
 
 const PILLARS = [
@@ -26,9 +25,25 @@ const PILLARS = [
 ];
 
 const ADVISORS = [
-  { name: 'Mr. Hunter Moody', role: 'Advisor', email: 'hunter.moody@nhcs.net' },
-  { name: 'Ms. Lori Roy', role: 'Advisor', email: 'lori.roy@nhcs.net' },
-  { name: 'Mrs. Ainsley Kovanda', role: 'Advisor', email: 'ainsley.kovanda@nhcs.net' },
+  { name: 'Hunter Moody', role: 'Advisor', email: 'hunter.moody@nhcs.net' },
+  { name: 'Lori Roy', role: 'Advisor', email: 'lori.roy@nhcs.net' },
+  { name: 'Ainsley Kovanda', role: 'Advisor', email: 'ainsley.kovanda@nhcs.net' },
+];
+
+const OFFICERS = [
+  { name: 'Perry Thompson', title: 'President' },
+  { name: 'Greyson Clymer', title: 'Vice-President' },
+  { name: 'Cassidy Freeman', title: 'Secretary' },
+  { name: 'Meghan Zylich', title: 'Event Coordinator' },
+  { name: 'Laura Beth Jenkins', title: 'Event Coordinator' },
+  { name: 'Liza Bullock', title: 'Event Coordinator' },
+  { name: 'Lily Danielsen', title: 'Social Media Coordinator' },
+  { name: 'Eve Berger', title: 'Upper-Classmen Representative' },
+  { name: 'Cambell Nay', title: 'Lower-Classmen Representative' },
+  { name: 'Stella McCorcle', title: 'Community Outreach Coordinator' },
+  { name: 'Bodey Thompson', title: 'Community Outreach Coordinator' },
+  { name: 'Cailyn Freeman', title: 'Historian' },
+  { name: "Aubree O'Rourke", title: 'Historian' },
 ];
 
 const INFO_TILES = [
@@ -94,7 +109,8 @@ function PhotoSlot({ ratio = '4 / 3', label = 'photo', style }) {
   );
 }
 
-function MarkerHighlight({ children, rotate = -1.5, color }) {
+// animate=true: yellow highlight sweeps left→right on mount (jthSweep keyframe from Shell)
+function MarkerHighlight({ children, rotate = -1.5, color, animate = false }) {
   const yellow = color || '#FFD140';
   return (
     <span style={{ position: 'relative', display: 'inline-block', whiteSpace: 'nowrap' }}>
@@ -105,7 +121,12 @@ function MarkerHighlight({ children, rotate = -1.5, color }) {
           inset: '8% -2% 14% -2%',
           background: yellow,
           zIndex: 0,
-          transform: `rotate(${rotate}deg)`,
+          ...(animate ? {
+            transformOrigin: 'left center',
+            animation: 'jthSweep 0.55s cubic-bezier(.25,.46,.45,.94) both',
+          } : {
+            transform: `rotate(${rotate}deg)`,
+          }),
         }}
       />
       <span style={{ position: 'relative', zIndex: 1 }}>{children}</span>
@@ -143,77 +164,73 @@ function useIsMobile(bp = 768) {
 const MobileCtx = React.createContext(false);
 function useMobile() { return React.useContext(MobileCtx); }
 
+// Back button shared by sub-pages
+function BackButton({ label, to, setPage, yellow = '#FFD140' }) {
+  const navy = '#04294e';
+  return (
+    <button
+      onClick={() => setPage(to)}
+      style={{
+        all: 'unset', cursor: 'pointer',
+        display: 'inline-flex', alignItems: 'center', gap: 8,
+        fontSize: 13, fontWeight: 700, textTransform: 'uppercase',
+        letterSpacing: '.06em', color: navy,
+        padding: '10px 16px', border: `2px solid ${navy}`,
+        background: yellow, boxShadow: `3px 3px 0 ${navy}`,
+        marginBottom: 40,
+      }}
+    >
+      ← {label}
+    </button>
+  );
+}
+
 // ------- shell
 function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
   const navy = '#04294e';
   const mobile = useIsMobile();
   const [menuOpen, setMenuOpen] = React.useState(false);
 
-  // Close menu whenever the page changes
+  // Inject animation CSS once
+  React.useEffect(() => {
+    if (document.getElementById('jth-anim')) return;
+    const s = document.createElement('style');
+    s.id = 'jth-anim';
+    s.textContent = `
+      @keyframes jthSweep {
+        from { transform: rotate(-1.5deg) scaleX(0); }
+        to   { transform: rotate(-1.5deg) scaleX(1); }
+      }
+      .jth-nav-hl { transform-origin: left center; }
+      .jth-nav-btn:not(.jth-nav-active):hover .jth-nav-hl {
+        animation: jthSweep 0.25s cubic-bezier(.25,.46,.45,.94) forwards;
+      }
+    `;
+    document.head.appendChild(s);
+  }, []);
+
   React.useEffect(() => { setMenuOpen(false); }, [page]);
 
   return (
     <MobileCtx.Provider value={mobile}>
-      <div
-        style={{
-          fontFamily: fonts.body,
-          color: navy,
-          background: 'var(--bg)',
-          minHeight: '100vh',
-          position: 'relative',
-        }}
-      >
+      <div style={{ fontFamily: fonts.body, color: navy, background: 'var(--bg)', minHeight: '100vh', position: 'relative' }}>
+
         {/* ---- HEADER ---- */}
-        <header
-          style={{
-            padding: mobile ? '14px 20px' : '24px 48px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            borderBottom: `2px solid ${navy}`,
-            position: 'sticky',
-            top: 0,
-            background: 'var(--bg)',
-            zIndex: 50,
-          }}
-        >
-          {/* Logo */}
-          <button
-            onClick={() => setPage('home')}
-            style={{
-              all: 'unset',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: 12,
-            }}
-          >
-            <span
-              style={{
-                width: mobile ? 40 : 52,
-                height: mobile ? 40 : 52,
-                background: yellow,
-                border: `2.5px solid ${navy}`,
-                transform: 'rotate(-6deg)',
-                display: 'grid',
-                placeItems: 'center',
-                fontFamily: fonts.head,
-                fontWeight: 900,
-                fontSize: mobile ? 22 : 30,
-                lineHeight: 1,
-                boxShadow: `4px 4px 0 ${navy}`,
-                flexShrink: 0,
-              }}
-            >
-              β
-            </span>
+        <header style={{
+          padding: mobile ? '14px 20px' : '24px 48px',
+          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+          borderBottom: `2px solid ${navy}`,
+          position: 'sticky', top: 0, background: 'var(--bg)', zIndex: 50,
+        }}>
+          <button onClick={() => setPage('home')} style={{ all: 'unset', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12 }}>
             <span style={{
-              fontFamily: fonts.head,
-              fontWeight: 900,
-              fontSize: mobile ? 16 : 22,
-              letterSpacing: '-.02em',
-              textTransform: 'uppercase',
-            }}>
+              width: mobile ? 40 : 52, height: mobile ? 40 : 52,
+              background: yellow, border: `2.5px solid ${navy}`,
+              transform: 'rotate(-6deg)', display: 'grid', placeItems: 'center',
+              fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 22 : 30,
+              lineHeight: 1, boxShadow: `4px 4px 0 ${navy}`, flexShrink: 0,
+            }}>β</span>
+            <span style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 16 : 22, letterSpacing: '-.02em', textTransform: 'uppercase' }}>
               JTH Beta Club
             </span>
           </button>
@@ -225,30 +242,23 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
                 <button
                   key={n.id}
                   onClick={() => setPage(n.id)}
+                  className={`jth-nav-btn${page === n.id ? ' jth-nav-active' : ''}`}
                   style={{
-                    all: 'unset',
-                    cursor: 'pointer',
-                    padding: '10px 14px',
-                    fontSize: 14,
-                    fontWeight: 700,
-                    color: navy,
-                    textTransform: 'uppercase',
-                    letterSpacing: '.02em',
+                    all: 'unset', cursor: 'pointer',
+                    padding: '10px 14px', fontSize: 14, fontWeight: 700,
+                    color: navy, textTransform: 'uppercase', letterSpacing: '.02em',
                     position: 'relative',
                   }}
                 >
-                  {page === n.id && (
-                    <span
-                      aria-hidden
-                      style={{
-                        position: 'absolute',
-                        inset: '6px -2px',
-                        background: yellow,
-                        zIndex: -1,
-                        transform: 'rotate(-1.5deg)',
-                      }}
-                    />
-                  )}
+                  <span
+                    aria-hidden
+                    className="jth-nav-hl"
+                    style={{
+                      position: 'absolute', inset: '6px -2px',
+                      background: yellow, zIndex: -1,
+                      transform: `rotate(-1.5deg) scaleX(${page === n.id ? 1 : 0})`,
+                    }}
+                  />
                   {n.label}
                 </button>
               ))}
@@ -261,20 +271,14 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
               onClick={() => setMenuOpen((o) => !o)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               style={{
-                all: 'unset',
-                cursor: 'pointer',
-                width: 44,
-                height: 44,
+                all: 'unset', cursor: 'pointer',
+                width: 44, height: 44,
                 background: menuOpen ? navy : yellow,
                 border: `2.5px solid ${navy}`,
-                display: 'grid',
-                placeItems: 'center',
-                fontSize: 24,
-                fontWeight: 900,
+                display: 'grid', placeItems: 'center',
+                fontSize: 24, fontWeight: 900,
                 color: menuOpen ? yellow : navy,
-                boxShadow: `3px 3px 0 ${navy}`,
-                flexShrink: 0,
-                lineHeight: 1,
+                boxShadow: `3px 3px 0 ${navy}`, flexShrink: 0, lineHeight: 1,
               }}
             >
               {menuOpen ? '✕' : '☰'}
@@ -282,38 +286,27 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
           )}
         </header>
 
-        {/* Mobile full-screen nav overlay — sits below header (z-index 45) */}
+        {/* Mobile full-screen nav overlay */}
         {mobile && menuOpen && (
-          <div
-            style={{
-              position: 'fixed',
-              inset: 0,
-              background: navy,
-              zIndex: 45,
-              display: 'flex',
-              flexDirection: 'column',
-              padding: '88px 28px 40px',
-              overflowY: 'auto',
-            }}
-          >
+          <div style={{
+            position: 'fixed', inset: 0, background: navy,
+            zIndex: 45, display: 'flex', flexDirection: 'column',
+            padding: '88px 28px 40px', overflowY: 'auto',
+          }}>
             {NAV.map((n, i) => (
               <button
                 key={n.id}
                 onClick={() => { setPage(n.id); setMenuOpen(false); }}
                 style={{
-                  all: 'unset',
-                  cursor: 'pointer',
-                  fontFamily: fonts.head,
-                  fontWeight: 900,
+                  all: 'unset', cursor: 'pointer',
+                  fontFamily: fonts.head, fontWeight: 900,
                   fontSize: 'clamp(28px, 8vw, 44px)',
                   textTransform: 'uppercase',
                   color: page === n.id ? yellow : '#fff',
                   letterSpacing: '-.025em',
                   padding: '16px 0',
                   borderBottom: i < NAV.length - 1 ? '1px solid rgba(255,255,255,.15)' : 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
+                  display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 }}
               >
                 {n.label}
@@ -329,33 +322,12 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
         {children}
 
         {/* ---- FOOTER ---- */}
-        <footer
-          style={{
-            marginTop: mobile ? 64 : 96,
-            background: navy,
-            color: '#fff',
-            padding: mobile ? '40px 20px 24px' : '56px 48px 32px',
-          }}
-        >
-          <div style={{
-            fontFamily: fonts.head,
-            fontWeight: 900,
-            fontSize: 'clamp(48px, 12vw, 140px)',
-            lineHeight: 1.0,
-            color: yellow,
-            letterSpacing: '-.04em',
-            margin: '0 0 48px',
-            textTransform: 'uppercase',
-          }}>
-            Beta is Service.
-          </div>
-          <div style={{
-            fontSize: 14,
-            fontStyle: 'italic',
-            color: 'rgba(255,255,255,.7)',
-            marginBottom: 36,
-            maxWidth: 480,
-          }}>
+        <footer style={{
+          marginTop: mobile ? 64 : 96,
+          background: navy, color: '#fff',
+          padding: mobile ? '40px 20px 24px' : '56px 48px 32px',
+        }}>
+          <div style={{ fontSize: 14, fontStyle: 'italic', color: 'rgba(255,255,255,.7)', marginBottom: 36, maxWidth: 480 }}>
             "Let Us Lead by Serving Others." — Our motto.
           </div>
           <div style={{
@@ -365,7 +337,6 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
             borderTop: '1px solid rgba(255,255,255,.18)',
             paddingTop: 32,
           }}>
-            {/* Blurb spans full width on mobile */}
             <div style={{ gridColumn: mobile ? 'span 2' : 'span 1' }}>
               <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 16, textTransform: 'uppercase', marginBottom: 10 }}>JTH Beta Club</div>
               <p style={{ fontSize: 13, color: 'rgba(255,255,255,.7)', lineHeight: 1.55, margin: 0, maxWidth: 280 }}>
@@ -384,7 +355,6 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
                 <button key={n.id} onClick={() => setPage(n.id)} style={{ all: 'unset', display: 'block', cursor: 'pointer', fontSize: 13, padding: '3px 0', color: 'rgba(255,255,255,.85)' }}>{n.label}</button>
               ))}
             </div>
-            {/* Address spans full width on mobile */}
             <div style={{ gridColumn: mobile ? 'span 2' : 'span 1' }}>
               <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', color: yellow, marginBottom: 10 }}>Find us</div>
               <div style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(255,255,255,.85)' }}>
@@ -395,15 +365,12 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
             </div>
           </div>
           <div style={{
-            marginTop: 32,
-            paddingTop: 20,
+            marginTop: 32, paddingTop: 20,
             borderTop: '1px solid rgba(255,255,255,.12)',
-            display: 'flex',
-            flexDirection: mobile ? 'column' : 'row',
+            display: 'flex', flexDirection: mobile ? 'column' : 'row',
             gap: mobile ? 6 : 0,
             justifyContent: 'space-between',
-            fontSize: 12,
-            color: 'rgba(255,255,255,.5)',
+            fontSize: 12, color: 'rgba(255,255,255,.5)',
           }}>
             <span>© {new Date().getFullYear()} JTH Beta Club · National Beta Chapter</span>
             <span>Site by Beta officers</span>
@@ -415,6 +382,6 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
 }
 
 Object.assign(window, {
-  NAV, STATS, PILLARS, ADVISORS, INFO_TILES, UPCOMING_EVENTS,
-  PhotoSlot, MarkerHighlight, Sticker, Shell, useMobile,
+  NAV, STATS, PILLARS, ADVISORS, OFFICERS, INFO_TILES, UPCOMING_EVENTS,
+  PhotoSlot, MarkerHighlight, Sticker, BackButton, Shell, useMobile,
 });
