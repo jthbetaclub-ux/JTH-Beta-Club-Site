@@ -1,5 +1,23 @@
 // site-pages.jsx — All pages for the JTH Beta Club site.
 
+// Counts from 0 to `to` with a cubic ease-out over `duration` ms
+function CountUp({ to, prefix = '', suffix = '', duration = 1200 }) {
+  const [val, setVal] = React.useState(0);
+  React.useEffect(() => {
+    let raf;
+    const start = performance.now();
+    const step = (now) => {
+      const t = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - t, 3);
+      setVal(Math.round(ease * to));
+      if (t < 1) raf = requestAnimationFrame(step);
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [to, duration]);
+  return <>{prefix}{val.toLocaleString()}{suffix}</>;
+}
+
 // =============================================================== HOME
 function HomePage({ fonts, setPage }) {
   const navy = '#04294e';
@@ -67,7 +85,9 @@ function HomePage({ fonts, setPage }) {
               padding: mobile ? '24px 16px' : '40px 32px',
               borderRight: i === STATS.length - 1 ? 'none' : `2px solid ${navy}`,
             }}>
-              <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 'clamp(32px, 8vw, 52px)' : 'clamp(48px, 6vw, 80px)', lineHeight: 1, letterSpacing: '-.04em', color: navy }}>{s.n}</div>
+              <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 'clamp(32px, 8vw, 52px)' : 'clamp(48px, 6vw, 80px)', lineHeight: 1, letterSpacing: '-.04em', color: navy }}>
+                <CountUp to={s.value} prefix={s.prefix} suffix={s.suffix} />
+              </div>
               <div style={{ fontSize: 12, marginTop: 8, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.04em', color: navy }}>{s.label}</div>
             </div>
           ))}
@@ -225,7 +245,7 @@ function SignupPage({ fonts }) {
         {[
           { l: 'Fall semester log', d: 'Jan 7, 2026', sub: 'All grades' },
           { l: 'Spring log · Seniors', d: 'May 1, 2026', sub: 'Earlier deadline' },
-          { l: 'Spring log · Sophomore & Junior', d: 'May 25, 2026', sub: 'Standard deadline' },
+          { l: 'Spring log · Sophomores & Juniors', d: 'May 25, 2026', sub: 'Standard deadline' },
         ].map((d, i) => (
           <div key={i} style={{
             padding: '22px 24px',
@@ -472,7 +492,7 @@ function LeadershipPage({ fonts, setPage }) {
           const col = i % cols;
           const isRowEnd = col === cols - 1 || i === OFFICERS.length - 1;
           const isLastRow = row === totalRows - 1;
-          const bg = i % 2 === 0 ? '#fff' : yellow;
+          const bg = (row + col) % 2 === 0 ? '#fff' : yellow;
 
           return (
             <div key={i} style={{

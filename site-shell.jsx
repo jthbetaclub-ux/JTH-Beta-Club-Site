@@ -12,9 +12,9 @@ const NAV = [
 ];
 
 const STATS = [
-  { n: '50+', label: 'Organizations served' },
-  { n: '3,000', label: 'Hours volunteered / yr' },
-  { n: '$4,000', label: 'Raised for charity / yr' },
+  { value: 50, prefix: '', suffix: '+', label: 'Organizations served' },
+  { value: 3000, prefix: '', suffix: '', label: 'Hours volunteered / yr' },
+  { value: 4000, prefix: '$', suffix: '', label: 'Raised for charity / yr' },
 ];
 
 const PILLARS = [
@@ -205,6 +205,10 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
       .jth-nav-btn:not(.jth-nav-active):hover .jth-nav-hl {
         animation: jthSweep 0.25s cubic-bezier(.25,.46,.45,.94) forwards;
       }
+      nav:has(.jth-nav-btn:not(.jth-nav-active):hover) .jth-nav-active .jth-nav-hl {
+        transform: rotate(-1.5deg) scaleX(0) !important;
+        transition: transform 0.15s ease;
+      }
     `;
     document.head.appendChild(s);
   }, []);
@@ -327,9 +331,6 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
           background: navy, color: '#fff',
           padding: mobile ? '40px 20px 24px' : '56px 48px 32px',
         }}>
-          <div style={{ fontSize: 14, fontStyle: 'italic', color: 'rgba(255,255,255,.7)', marginBottom: 36, maxWidth: 480 }}>
-            "Let Us Lead by Serving Others." — Our motto.
-          </div>
           <div style={{
             display: 'grid',
             gridTemplateColumns: mobile ? '1fr 1fr' : 'repeat(4, 1fr)',
