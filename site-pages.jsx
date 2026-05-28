@@ -33,7 +33,7 @@ function HomePage({ fonts, setPage }) {
             <h1 style={{
               fontFamily: fonts.head, fontWeight: 900,
               fontSize: 'clamp(60px, 14vw, 156px)',
-              lineHeight: .88, letterSpacing: '-.045em',
+              lineHeight: .88, letterSpacing: '-.02em',
               margin: mobile ? '0 0 20px' : '0 0 32px',
               textTransform: 'uppercase',
             }}>
@@ -129,7 +129,7 @@ function HomePage({ fonts, setPage }) {
       </section>
 
       {/* FOUR PILLARS */}
-      <section style={{ padding: mobile ? '48px 20px' : '88px 48px' }}>
+      <section style={{ padding: mobile ? '48px 20px' : '64px 48px' }}>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 16, marginBottom: mobile ? 24 : 40, flexWrap: 'wrap' }}>
           <h2 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(32px, 6vw, 72px)', margin: 0, letterSpacing: '-.03em', textTransform: 'uppercase', lineHeight: .95 }}>The four pillars</h2>
           {!mobile && <div style={{ flex: 1, height: 2, background: navy, marginBottom: 14 }} />}
@@ -165,7 +165,7 @@ function AboutPage({ fonts, setPage }) {
       <section style={{ padding: mobile ? '40px 20px 32px' : '64px 48px 56px', borderBottom: `2px solid ${navy}` }}>
         <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 20 }}>About the chapter</div>
         <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(56px, 10vw, 140px)', lineHeight: .9, letterSpacing: '-.04em', margin: 0, textTransform: 'uppercase' }}>
-          Started in<br/><MarkerHighlight>1991.</MarkerHighlight>{' '}Still going.
+          Started in<br/><MarkerHighlight animate={true}>1991.</MarkerHighlight>{' '}Still going.
         </h1>
       </section>
 
@@ -195,10 +195,7 @@ function AboutPage({ fonts, setPage }) {
         <p style={{ fontSize: mobile ? 18 : 22, lineHeight: 1.45, maxWidth: 880, fontWeight: 500, margin: '0 0 10px' }}>
           To promote the ideals of academic achievement, character, service, and leadership among students.
         </p>
-        <p style={{ fontSize: 15, fontStyle: 'italic', color: 'rgba(4,41,78,.7)', margin: mobile ? '0 0 28px' : '0 0 40px' }}>
-          Motto: "Let Us Lead by Serving Others."
-        </p>
-        <div style={{ display: 'grid', gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: 0, border: `2.5px solid ${navy}` }}>
+        <div style={{ display: 'grid', gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: 0, border: `2.5px solid ${navy}`, marginTop: mobile ? 28 : 40 }}>
           {PILLARS.map((c, i) => (
             <div key={i} style={{
               background: i % 2 === 0 ? '#fff' : yellow, padding: mobile ? 20 : 28,
@@ -234,10 +231,10 @@ function SignupPage({ fonts }) {
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
       <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>Event sign up</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(52px, 10vw, 128px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: mobile ? '0 0 16px' : '0 0 24px' }}>
-        Pick an event.<br/><MarkerHighlight>Show up.</MarkerHighlight>
+        Pick an event.<br/><MarkerHighlight animate={true}>Show up.</MarkerHighlight>
       </h1>
       <p style={{ fontSize: mobile ? 16 : 19, lineHeight: 1.5, maxWidth: 760, margin: '0 0 28px', fontWeight: 500 }}>
-        All Beta-sponsored events for the semester. Hours from these count toward your requirement. Sign up below, then submit your log at the end of the semester.
+        All Beta-sponsored events for the semester. Hours from these count toward your requirement. Sign up below, and add the events to your log within one week of the event.
       </p>
 
       {/* HOUR LOG DUE DATES */}
@@ -303,35 +300,22 @@ function VolunteersPage({ fonts }) {
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
       <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>For community partners</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(52px, 10vw, 128px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: mobile ? '0 0 16px' : '0 0 24px' }}>
-        Need <MarkerHighlight>hands?</MarkerHighlight><br/>We've got 'em.
+        Need <MarkerHighlight animate={true}>hands?</MarkerHighlight><br/>We've got 'em.
       </h1>
       <p style={{ fontSize: mobile ? 16 : 19, lineHeight: 1.5, maxWidth: 760, margin: mobile ? '0 0 36px' : '0 0 56px', fontWeight: 500 }}>
-        Nonprofits, schools, and community orgs across New Hanover County — tell us what you need and our service chair will be in touch within a few days.
+        Nonprofits, schools, and community orgs across the Wilmington area — tell us what you need and our community outreach coordinators will be in touch within 24–72 hours.
       </p>
-
-      <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : 'repeat(2, 1fr)', gap: 0, border: `2.5px solid ${navy}`, marginBottom: mobile ? 32 : 48 }}>
-        {[{ n: '24–72h', l: 'Typical response' }, { n: '3–25', l: 'Volunteers per event' }].map((s, i) => (
-          <div key={i} style={{ padding: '28px 24px', background: i === 1 ? yellow : '#fff', borderRight: mobile ? 'none' : (i === 1 ? 'none' : `2.5px solid ${navy}`), borderBottom: mobile && i === 0 ? `2.5px solid ${navy}` : 'none' }}>
-            <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(40px, 5vw, 64px)', lineHeight: 1, letterSpacing: '-.04em', color: navy, textTransform: 'uppercase' }}>{s.n}</div>
-            <div style={{ fontSize: 14, marginTop: 10, fontWeight: 700, textTransform: 'uppercase' }}>{s.l}</div>
-          </div>
-        ))}
-      </div>
 
       <div style={{ border: `2.5px solid ${navy}`, background: '#fff', boxShadow: `10px 10px 0 ${yellow}` }}>
         <div style={{ background: navy, color: '#fff', padding: '18px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 13 }}>
             <span style={{ width: 12, height: 12, background: yellow, display: 'inline-block', flexShrink: 0 }} />
-            Google Form · Volunteer Request (embed)
+            Volunteer Request Form
           </div>
-          <span style={{ fontSize: 12, color: 'rgba(255,255,255,.6)' }}>hoggardbetaclub</span>
+          <span style={{ fontSize: 12, color: 'rgba(255,255,255,.6)' }}>jthbetaclub</span>
         </div>
-        <div style={{ padding: mobile ? 32 : 64, minHeight: mobile ? 320 : 540, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 18, textAlign: 'center', background: 'repeating-linear-gradient(135deg, rgba(4,41,78,.04) 0 10px, rgba(4,41,78,.01) 10px 20px)' }}>
-          <div style={{ padding: '8px 14px', background: yellow, border: `2px solid ${navy}`, fontFamily: fonts.head, fontWeight: 900, fontSize: 12, textTransform: 'uppercase', letterSpacing: '.06em' }}>✦ Google Form goes here</div>
-          <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 24 : 32, letterSpacing: '-.02em', textTransform: 'uppercase', lineHeight: 1 }}>Volunteer request form</div>
-          <p style={{ fontFamily: 'ui-monospace, Menlo, monospace', fontSize: 13, color: 'rgba(4,41,78,.6)', maxWidth: 520, margin: 0, lineHeight: 1.6 }}>
-            Paste your Google Form embed iframe here. Recommended height ~ 900px so the form renders without scrolling.
-          </p>
+        <div style={{ overflowX: 'auto' }}>
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeiIjMm_tRkNV-Ak9WYhaMa4jMCpkzHAT9syvjynOtwctoBQw/viewform?embedded=true" width="640" height="900" frameBorder="0" marginHeight="0" marginWidth="0" style={{ display: 'block', maxWidth: '100%' }}>Loading…</iframe>
         </div>
       </div>
     </main>
@@ -349,7 +333,7 @@ function InfoPage({ fonts, setPage }) {
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
       <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>Info</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(52px, 10vw, 128px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: mobile ? '0 0 12px' : '0 0 16px' }}>
-        Member<br/><MarkerHighlight>resources.</MarkerHighlight>
+        Member<br/><MarkerHighlight animate={true}>resources.</MarkerHighlight>
       </h1>
       <p style={{ fontSize: mobile ? 16 : 18, lineHeight: 1.5, maxWidth: 600, margin: mobile ? '0 0 36px' : '0 0 56px', fontWeight: 500 }}>
         Bookmark this page. Everything you need to be a member lives here.
@@ -428,7 +412,7 @@ function ContactPage({ fonts }) {
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
       <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>Contact</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(52px, 10vw, 128px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: mobile ? '0 0 16px' : '0 0 24px' }}>
-        Say<br/><MarkerHighlight>hello.</MarkerHighlight>
+        Say<br/><MarkerHighlight animate={true}>hello.</MarkerHighlight>
       </h1>
       <p style={{ fontSize: mobile ? 16 : 19, lineHeight: 1.5, maxWidth: 720, margin: mobile ? '0 0 32px' : '0 0 48px', fontWeight: 500 }}>
         Questions about membership, applications, or partnering on a service event? Email is the fastest way. For club issues, talk to an officer or one of our advisors directly.
@@ -482,7 +466,7 @@ function LeadershipPage({ fonts, setPage }) {
 
       <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025–26</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(52px, 10vw, 128px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: '0 0 48px' }}>
-        Current<br/><MarkerHighlight>Leadership.</MarkerHighlight>
+        Current<br/><MarkerHighlight animate={true}>Leadership.</MarkerHighlight>
       </h1>
 
       {/* Officer grid */}
@@ -550,7 +534,7 @@ function RequirementsPage({ fonts, setPage }) {
     { icon: '⏱', title: 'Item Drive Hours', body: 'Only 2 hours per semester may come from item drives (Blanket Drive, Operation Christmas Child, etc.). These events are valuable, but can\'t be the majority of your hours.' },
     { icon: '→', title: 'Hour Rollover', body: 'If you earn more than 10 hours in the fall semester, up to 5 extra hours carry over to your spring requirement. Complete your log on time to take advantage of this.' },
     { icon: '✓', title: 'Attendance', body: 'You must attend at least 2 Beta-sponsored service events per semester. Logging outside volunteer hours counts toward your total, but events matter separately.' },
-    { icon: '!', title: 'Log Submission', body: 'Submit your hour log by the deadline for your grade. Late submissions may not be accepted. Contact an advisor if you have an extenuating circumstance before the deadline.' },
+    { icon: '!', title: 'Log Completion', body: 'Complete your hour log by the deadline for your grade. Late logs may not be accepted. Contact an advisor if you have an extenuating circumstance before the deadline.' },
   ];
 
   return (
@@ -559,7 +543,7 @@ function RequirementsPage({ fonts, setPage }) {
 
       <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025–26</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(44px, 9vw, 120px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: '0 0 20px' }}>
-        Member<br/><MarkerHighlight>Requirements.</MarkerHighlight>
+        Member<br/><MarkerHighlight animate={true}>Requirements.</MarkerHighlight>
       </h1>
       <p style={{ fontSize: mobile ? 15 : 18, lineHeight: 1.5, maxWidth: 720, margin: mobile ? '0 0 36px' : '0 0 56px', fontWeight: 500 }}>
         To remain an active member in good standing, you must meet the following requirements each school year. Check your grade level below.
@@ -620,68 +604,25 @@ function SlidesPage({ fonts, setPage }) {
   const yellow = '#FFD140';
   const mobile = useMobile();
 
-  const meetings = [
-    { label: 'Fall Meeting 1', date: 'September 2025' },
-    { label: 'Fall Meeting 2', date: 'October 2025' },
-    { label: 'Fall Meeting 3', date: 'November 2025' },
-    { label: 'Spring Meeting 1', date: 'January 2026' },
-    { label: 'Spring Meeting 2', date: 'February 2026' },
-    { label: 'Spring Meeting 3', date: 'March 2026' },
-  ];
-
   return (
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
       <BackButton label="Info" to="info" setPage={setPage} yellow={yellow} />
 
       <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025–26</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(44px, 9vw, 120px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: '0 0 20px' }}>
-        Meeting<br/><MarkerHighlight>Presentations.</MarkerHighlight>
+        Meeting<br/><MarkerHighlight animate={true}>Presentations.</MarkerHighlight>
       </h1>
       <p style={{ fontSize: mobile ? 15 : 18, lineHeight: 1.5, maxWidth: 720, margin: mobile ? '0 0 36px' : '0 0 56px', fontWeight: 500 }}>
-        Missed a meeting? All slides are posted here after each session. Click a meeting to view the presentation.
+        Presentations from our meetings will be posted here when available.
       </p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 0, border: `2.5px solid ${navy}` }}>
-        {meetings.map((m, i) => (
-          <div key={i} style={{ borderBottom: i < meetings.length - 1 ? `2.5px solid ${navy}` : 'none' }}>
-            {/* Meeting header */}
-            <div style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-              padding: mobile ? '16px 20px' : '18px 28px',
-              background: i % 2 === 0 ? '#fff' : yellow,
-              flexWrap: 'wrap', gap: 8,
-            }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-                <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 18 : 22, textTransform: 'uppercase', letterSpacing: '-.01em' }}>{m.label}</div>
-                <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.05em', opacity: .6 }}>{m.date}</div>
-              </div>
-              <div style={{ fontSize: 11, fontWeight: 700, padding: '6px 12px', background: navy, color: yellow, textTransform: 'uppercase', letterSpacing: '.05em' }}>
-                Embed slides below ↓
-              </div>
-            </div>
-            {/* Slides embed slot */}
-            <div style={{
-              background: 'repeating-linear-gradient(135deg, rgba(4,41,78,.03) 0 8px, rgba(4,41,78,.01) 8px 16px)',
-              borderTop: `1.5px dashed rgba(4,41,78,.2)`,
-              padding: mobile ? '28px 20px' : '36px 28px',
-              minHeight: mobile ? 160 : 200,
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              gap: 10, textAlign: 'center',
-            }}>
-              <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', color: 'rgba(4,41,78,.5)' }}>
-                Google Slides embed · {m.label}
-              </div>
-              <div style={{ fontFamily: 'ui-monospace, Menlo, monospace', fontSize: 12, color: 'rgba(4,41,78,.4)', maxWidth: 500, lineHeight: 1.6 }}>
-                {'<iframe src="https://docs.google.com/presentation/d/..." ... />'}
-              </div>
-            </div>
-          </div>
-        ))}
+      <div style={{ border: `2.5px solid ${navy}`, padding: mobile ? '48px 24px' : '72px 48px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, textAlign: 'center', background: '#fff' }}>
+        <div style={{ width: 64, height: 64, background: yellow, border: `2.5px solid ${navy}`, display: 'grid', placeItems: 'center', fontFamily: fonts.head, fontWeight: 900, fontSize: 28, transform: 'rotate(-4deg)', boxShadow: `4px 4px 0 ${navy}`, flexShrink: 0 }}>▶</div>
+        <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 22 : 28, textTransform: 'uppercase', letterSpacing: '-.02em', lineHeight: 1 }}>No presentations yet</div>
+        <p style={{ fontSize: 15, lineHeight: 1.6, margin: 0, fontWeight: 500, maxWidth: 480, color: 'rgba(4,41,78,.7)' }}>
+          Check back after meetings — slides will be added here when they're ready.
+        </p>
       </div>
-
-      <p style={{ fontSize: 13, color: 'rgba(4,41,78,.55)', marginTop: 20, fontStyle: 'italic' }}>
-        Slides are posted within 24 hours of each meeting. Contact an officer if a presentation is missing.
-      </p>
     </main>
   );
 }
@@ -717,16 +658,20 @@ function ApplicationsPage({ fonts, setPage }) {
 
       <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025–26</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(44px, 9vw, 120px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: '0 0 20px' }}>
-        <MarkerHighlight>Applications.</MarkerHighlight>
+        <MarkerHighlight animate={true}>Applications.</MarkerHighlight>
       </h1>
-      <p style={{ fontSize: mobile ? 15 : 18, lineHeight: 1.5, maxWidth: 720, margin: mobile ? '0 0 36px' : '0 0 56px', fontWeight: 500 }}>
-        Two application tracks — one for new members, one for current members seeking leadership roles. Both are submitted via Google Form below.
-      </p>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: mobile ? 32 : 48 }}>
+      <div style={{ border: `2.5px solid ${navy}`, background: yellow, padding: mobile ? '24px 24px' : '28px 36px', marginBottom: mobile ? 36 : 56, display: 'flex', alignItems: mobile ? 'flex-start' : 'center', gap: 16, flexDirection: mobile ? 'column' : 'row', boxShadow: `6px 6px 0 ${navy}` }}>
+        <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 28, lineHeight: 1, flexShrink: 0 }}>✕</div>
+        <div>
+          <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 20 : 24, textTransform: 'uppercase', letterSpacing: '-.01em', lineHeight: 1, marginBottom: 6 }}>Applications are closed for 2025–2026</div>
+          <p style={{ fontSize: 15, lineHeight: 1.55, margin: 0, fontWeight: 500 }}>The application window for the current school year has passed. Check back in the fall when new membership applications open.</p>
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: mobile ? 32 : 48, opacity: .45, pointerEvents: 'none' }}>
         {apps.map((a) => (
           <div key={a.key} style={{ border: `2.5px solid ${navy}`, boxShadow: `8px 8px 0 ${a.bg === '#fff' ? yellow : navy}` }}>
-            {/* App header */}
             <div style={{ background: navy, color: '#fff', padding: mobile ? '20px 24px' : '24px 32px', display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
               <div style={{ width: 48, height: 48, background: yellow, border: `2px solid rgba(255,255,255,.2)`, display: 'grid', placeItems: 'center', fontFamily: fonts.head, fontWeight: 900, fontSize: 22, flexShrink: 0 }}>
                 {a.icon}
@@ -736,27 +681,8 @@ function ApplicationsPage({ fonts, setPage }) {
                 <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.05em', color: yellow, marginTop: 2 }}>{a.badge}</div>
               </div>
             </div>
-            {/* Description */}
-            <div style={{ padding: mobile ? '20px 24px' : '24px 32px', background: a.bg, borderBottom: `2.5px solid ${navy}` }}>
+            <div style={{ padding: mobile ? '20px 24px' : '24px 32px', background: a.bg }}>
               <p style={{ fontSize: 15, lineHeight: 1.6, margin: 0, fontWeight: 500 }}>{a.sub}</p>
-            </div>
-            {/* Form embed slot */}
-            <div style={{
-              padding: mobile ? '32px 24px' : '48px 32px',
-              minHeight: mobile ? 240 : 320,
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              gap: 14, textAlign: 'center',
-              background: 'repeating-linear-gradient(135deg, rgba(4,41,78,.04) 0 10px, rgba(4,41,78,.01) 10px 20px)',
-            }}>
-              <div style={{ padding: '8px 14px', background: yellow, border: `2px solid ${navy}`, fontFamily: fonts.head, fontWeight: 900, fontSize: 11, textTransform: 'uppercase', letterSpacing: '.06em' }}>
-                ✦ Google Form embed
-              </div>
-              <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 20 : 26, letterSpacing: '-.015em', textTransform: 'uppercase', lineHeight: 1 }}>
-                {a.title}
-              </div>
-              <p style={{ fontFamily: 'ui-monospace, Menlo, monospace', fontSize: 12, color: 'rgba(4,41,78,.55)', maxWidth: 480, margin: 0, lineHeight: 1.6 }}>
-                Paste your Google Form embed iframe here. Recommended height ~ 900px.
-              </p>
             </div>
           </div>
         ))}
