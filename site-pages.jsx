@@ -288,7 +288,7 @@ function SignupPage({ fonts }) {
                   <span style={{ display: 'inline-block', background: 'rgba(4,41,78,.15)', color: 'rgba(4,41,78,.4)', padding: '12px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 14, textTransform: 'uppercase' }}>Sign up →</span>
                 ) : null}
                 {e.url2 && (
-                  <a href={e.url2} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-block', background: yellow, color: navy, padding: '10px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 13, textTransform: 'uppercase', border: `2px solid ${navy}`, boxShadow: `3px 3px 0 ${navy}`, whiteSpace: 'nowrap' }}>Also register →</a>
+                  <a href={e.url2} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-block', background: yellow, color: navy, padding: '10px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 13, textTransform: 'uppercase', border: `2px solid ${navy}`, boxShadow: `3px 3px 0 ${navy}`, whiteSpace: 'nowrap' }}>Here second →</a>
                 )}
               </div>
             </div>
