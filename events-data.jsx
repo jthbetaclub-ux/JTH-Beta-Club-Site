@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 5/29/2026, 12:13:49 AM ET
+// Last updated: 5/29/2026, 12:23:35 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -8,8 +8,8 @@ const UPCOMING_EVENTS = [
     "mo": "MAY",
     "detail": "Join Holly Tree Elementary for their school dance!",
     "spots": "10",
-    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-63999879-holly#/",
-    "url2": "https://www.signupgenius.com/go/904054BAFAD28A1F94-63997107-beta#/"
+    "url": "https://www.signupgenius.com/go/904054BAFAD28A1F94-63997107-beta#/",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-63999879-holly#/"
   }
 ];
 
