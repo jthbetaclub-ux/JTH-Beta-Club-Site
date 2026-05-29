@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 5/29/2026, 12:56:40 AM ET
+// Last updated: 5/29/2026, 12:02:43 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -20,6 +20,16 @@ const UPCOMING_EVENTS = [
     "spots": "10",
     "url": "https://www.signupgenius.com/go/904054BAFAD28A1F94-63997107-beta#/",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-63999879-holly#/",
+    "dateNote": ""
+  },
+  {
+    "title": "Showing coach moody the website",
+    "day": "29",
+    "mo": "MAY",
+    "detail": "Make sure he likes it",
+    "spots": "2",
+    "url": "https://www.apple.com/",
+    "url2": "https://www.target.com/",
     "dateNote": ""
   }
 ];
