@@ -34,6 +34,8 @@ const UPCOMING_EVENTS = [
   }
 ];
 
-const RECURRING_EVENTS = [];
+const RECURRING_EVENTS = [
+  // example shape: { title, dates, detail, spots, url, url2 }
+];
 
 Object.assign(window, { UPCOMING_EVENTS, RECURRING_EVENTS });

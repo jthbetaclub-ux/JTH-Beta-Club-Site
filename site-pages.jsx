@@ -284,12 +284,24 @@ function SignupPage({ fonts }) {
             <div key={i} style={{
               background: '#fff',
               borderBottom: i === events.length - 1 ? 'none' : `2px solid ${navy}`,
-              ...(mobile ? { padding: 20, display: 'flex', flexDirection: 'column', gap: 10 } : { display: 'grid', gridTemplateColumns: '120px 1fr auto', alignItems: 'center', gap: 32, padding: '28px 32px' }),
+              ...(mobile ? { padding: 20, display: 'flex', flexDirection: 'column', gap: 10 } : { display: 'grid', gridTemplateColumns: tab === 'recurring' ? '160px 1fr auto' : '120px 1fr auto', alignItems: 'center', gap: 32, padding: '28px 32px' }),
             }}>
-              <div style={mobile ? { display: 'flex', alignItems: 'baseline', gap: 10 } : {}}>
-                <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 40 : 56, lineHeight: .9, letterSpacing: '-.04em', color: navy }}>{e.day}</div>
-                <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 12 : 14, letterSpacing: '.04em', textTransform: 'uppercase', color: navy }}>{e.mo}</div>
-              </div>
+              {tab === 'recurring' ? (
+                <div style={{
+                  background: yellow, border: `2px solid ${navy}`,
+                  padding: '10px 14px', alignSelf: mobile ? 'flex-start' : 'stretch',
+                  display: 'flex', alignItems: 'center',
+                  fontFamily: fonts.head, fontWeight: 700,
+                  fontSize: mobile ? 13 : 14, lineHeight: 1.45, color: navy,
+                }}>
+                  {e.dates}
+                </div>
+              ) : (
+                <div style={mobile ? { display: 'flex', alignItems: 'baseline', gap: 10 } : {}}>
+                  <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 40 : 56, lineHeight: .9, letterSpacing: '-.04em', color: navy }}>{e.day}</div>
+                  <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 12 : 14, letterSpacing: '.04em', textTransform: 'uppercase', color: navy }}>{e.mo}</div>
+                </div>
+              )}
               <div>
                 <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 18 : 24, letterSpacing: '-.015em', textTransform: 'uppercase', marginBottom: 4 }}>{e.title}</div>
                 <div style={{ fontSize: 14, color: navy, opacity: .8, fontWeight: 500 }}>{e.detail}</div>
