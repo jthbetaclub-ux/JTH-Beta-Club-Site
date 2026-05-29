@@ -1,37 +1,13 @@
-// events-data.jsx — Auto-generated from Google Sheets. Do not edit manually.
-// To update events, use the "Beta Club Site > Publish Events to Website" menu in the Google Sheet.
+// events-data.jsx ? Auto-generated. Do not edit manually.
+// Last updated: 5/28/2026, 11:46:01 PM ET
 
 const UPCOMING_EVENTS = [
   {
-    "title": "Sleep In Heavenly Peace Bed Build",
-    "day": "18",
-    "mo": "APR",
-    "detail": "Building beds for kids in Wilmington who don't have one.",
-    "spots": "25 / 30",
-    "signature": true
-  },
-  {
-    "title": "Wilmington Food Bank Sort",
-    "day": "22",
-    "mo": "MAR",
-    "detail": "Sorting and packing donations · 9am–12pm.",
-    "spots": "8 / 12",
-    "signature": false
-  },
-  {
-    "title": "Spring Beach Sweep",
-    "day": "05",
-    "mo": "APR",
-    "detail": "Wrightsville Beach cleanup with Keep NHC Beautiful.",
-    "spots": "14 / 20",
-    "signature": false
-  },
-  {
-    "title": "Blanket Drive Sort",
-    "day": "26",
-    "mo": "APR",
-    "detail": "Sorting donations for the annual blanket drive.",
-    "spots": "6 / 10",
+    "title": "Test Event",
+    "day": "5",
+    "mo": "12",
+    "detail": "Testing to see if Claude knows what it's doing",
+    "spots": "2",
     "signature": false
   }
 ];
