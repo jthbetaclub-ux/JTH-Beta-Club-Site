@@ -197,6 +197,7 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
     const s = document.createElement('style');
     s.id = 'jth-anim';
     s.textContent = `
+      html, body { overflow-x: hidden; }
       @keyframes jthSweep {
         from { transform: rotate(-1.5deg) scaleX(0); }
         to   { transform: rotate(-1.5deg) scaleX(1); }
@@ -279,13 +280,19 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
                 width: 44, height: 44,
                 background: menuOpen ? navy : yellow,
                 border: `2.5px solid ${navy}`,
-                display: 'grid', placeItems: 'center',
-                fontSize: 24, fontWeight: 900,
-                color: menuOpen ? yellow : navy,
-                boxShadow: `3px 3px 0 ${navy}`, flexShrink: 0, lineHeight: 1,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                boxShadow: `3px 3px 0 ${navy}`, flexShrink: 0,
               }}
             >
-              {menuOpen ? '✕' : '☰'}
+              {menuOpen ? (
+                <span style={{ fontSize: 18, lineHeight: 1, color: yellow, fontWeight: 900, userSelect: 'none' }}>✕</span>
+              ) : (
+                <span style={{ display: 'flex', flexDirection: 'column', gap: 5, width: 20, pointerEvents: 'none' }}>
+                  <span style={{ display: 'block', height: 2.5, background: navy }} />
+                  <span style={{ display: 'block', height: 2.5, background: navy }} />
+                  <span style={{ display: 'block', height: 2.5, background: navy, width: '70%' }} />
+                </span>
+              )}
             </button>
           )}
         </header>

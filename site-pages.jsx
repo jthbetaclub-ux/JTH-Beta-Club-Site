@@ -314,9 +314,7 @@ function VolunteersPage({ fonts }) {
           </div>
           <span style={{ fontSize: 12, color: 'rgba(255,255,255,.6)' }}>jthbetaclub</span>
         </div>
-        <div style={{ overflowX: 'auto' }}>
-          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeiIjMm_tRkNV-Ak9WYhaMa4jMCpkzHAT9syvjynOtwctoBQw/viewform?embedded=true" width="640" height="900" frameBorder="0" marginHeight="0" marginWidth="0" style={{ display: 'block', maxWidth: '100%' }}>Loading…</iframe>
-        </div>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeiIjMm_tRkNV-Ak9WYhaMa4jMCpkzHAT9syvjynOtwctoBQw/viewform?embedded=true" height="900" frameBorder="0" style={{ display: 'block', width: '100%', border: 0 }}>Loading…</iframe>
       </div>
     </main>
   );
