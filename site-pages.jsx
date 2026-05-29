@@ -261,7 +261,7 @@ function SignupPage({ fonts }) {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 0, border: `2.5px solid ${navy}` }}>
         {UPCOMING_EVENTS.map((e, i) => (
           <div key={i} style={{
-            background: e.signature ? yellow : '#fff',
+            background: '#fff',
             borderBottom: i === UPCOMING_EVENTS.length - 1 ? 'none' : `2px solid ${navy}`,
             ...(mobile ? { padding: 20, display: 'flex', flexDirection: 'column', gap: 10 } : { display: 'grid', gridTemplateColumns: '120px 1fr auto', alignItems: 'center', gap: 32, padding: '28px 32px' }),
           }}>
@@ -270,9 +270,8 @@ function SignupPage({ fonts }) {
               <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 12 : 14, letterSpacing: '.04em', textTransform: 'uppercase', color: navy }}>{e.mo}</div>
             </div>
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 4, flexWrap: 'wrap' }}>
+              <div style={{ marginBottom: 4 }}>
                 <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 18 : 24, letterSpacing: '-.015em', textTransform: 'uppercase' }}>{e.title}</div>
-                {e.signature && <span style={{ fontSize: 11, fontWeight: 700, padding: '4px 8px', background: navy, color: yellow, textTransform: 'uppercase', letterSpacing: '.04em' }}>Signature</span>}
               </div>
               <div style={{ fontSize: 14, color: navy, opacity: .8, fontWeight: 500 }}>{e.detail}</div>
             </div>
@@ -281,7 +280,11 @@ function SignupPage({ fonts }) {
                 <div>{e.spots}</div>
                 <div style={{ fontSize: 11, opacity: .7, textTransform: 'uppercase', letterSpacing: '.04em' }}>Signed up</div>
               </div>
-              <button style={{ all: 'unset', cursor: 'pointer', background: navy, color: yellow, padding: '12px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 14, textTransform: 'uppercase', boxShadow: e.signature ? `3px 3px 0 #fff` : `3px 3px 0 ${yellow}` }}>Sign up →</button>
+              {e.url ? (
+                <a href={e.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-block', background: navy, color: yellow, padding: '12px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 14, textTransform: 'uppercase', boxShadow: `3px 3px 0 ${yellow}` }}>Sign up →</a>
+              ) : (
+                <span style={{ display: 'inline-block', background: 'rgba(4,41,78,.15)', color: 'rgba(4,41,78,.4)', padding: '12px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 14, textTransform: 'uppercase' }}>Sign up →</span>
+              )}
             </div>
           </div>
         ))}
