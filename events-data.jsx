@@ -1,4 +1,4 @@
-// events-data.jsx ? Auto-generated. Do not edit manually.
+// events-data.jsx — Auto-generated from Google Sheets. Do not edit manually.
 // Last updated: 5/29/2026, 12:29:23 AM ET
 
 const UPCOMING_EVENTS = [
@@ -9,7 +9,8 @@ const UPCOMING_EVENTS = [
     "detail": "This event is celebrating the history of Wilmington athletics!",
     "spots": "8",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-64077165-wilmington#/",
-    "url2": ""
+    "url2": "",
+    "dateNote": ""
   },
   {
     "title": "Holly Tree Dance",
@@ -18,7 +19,8 @@ const UPCOMING_EVENTS = [
     "detail": "Join Holly Tree Elementary for their school dance!",
     "spots": "10",
     "url": "https://www.signupgenius.com/go/904054BAFAD28A1F94-63997107-beta#/",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-63999879-holly#/"
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-63999879-holly#/",
+    "dateNote": ""
   }
 ];
 

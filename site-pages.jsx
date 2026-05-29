@@ -271,6 +271,9 @@ function SignupPage({ fonts }) {
                 <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 18 : 24, letterSpacing: '-.015em', textTransform: 'uppercase' }}>{e.title}</div>
               </div>
               <div style={{ fontSize: 14, color: navy, opacity: .8, fontWeight: 500 }}>{e.detail}</div>
+              {e.dateNote && (
+                <div style={{ fontSize: 12, fontWeight: 600, color: navy, opacity: .55, marginTop: 4, fontStyle: 'italic' }}>↻ {e.dateNote}</div>
+              )}
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: mobile ? 'flex-start' : 'flex-end', gap: 8 }}>
               {e.spots && (
