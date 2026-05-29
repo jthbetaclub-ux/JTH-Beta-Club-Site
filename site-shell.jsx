@@ -74,12 +74,6 @@ const INFO_TILES = [
   },
 ];
 
-const UPCOMING_EVENTS = [
-  { date: 'Apr 18', mo: 'APR', day: '18', title: 'Sleep In Heavenly Peace Bed Build', detail: 'Building beds for kids in Wilmington who don\'t have one.', spots: '25 / 30', signature: true },
-  { date: 'Mar 22', mo: 'MAR', day: '22', title: 'Wilmington Food Bank Sort', detail: 'Sorting and packing donations · 9am–12pm.', spots: '8 / 12', signature: false },
-  { date: 'Apr 5', mo: 'APR', day: '05', title: 'Spring Beach Sweep', detail: 'Wrightsville Beach cleanup with Keep NHC Beautiful.', spots: '14 / 20', signature: false },
-  { date: 'Apr 26', mo: 'APR', day: '26', title: 'Blanket Drive Sort', detail: 'Sorting donations for the annual blanket drive.', spots: '6 / 10', signature: false },
-];
 
 // ------- helpers
 function PhotoSlot({ ratio = '4 / 3', label = 'photo', style }) {
@@ -390,6 +384,6 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
 }
 
 Object.assign(window, {
-  NAV, STATS, PILLARS, ADVISORS, OFFICERS, INFO_TILES, UPCOMING_EVENTS,
+  NAV, STATS, PILLARS, ADVISORS, OFFICERS, INFO_TILES,
   PhotoSlot, MarkerHighlight, Sticker, BackButton, Shell, useMobile,
 });
