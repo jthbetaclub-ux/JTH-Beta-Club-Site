@@ -50,7 +50,7 @@ function HomePage({ fonts, setPage }) {
             {UPCOMING_EVENTS[0] && (
               <Sticker rotate={4} shadow={navy} style={{ position: 'absolute', top: -8, right: mobile ? 0 : -8, maxWidth: mobile ? 190 : 240, zIndex: 2 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', color: navy, marginBottom: 4, letterSpacing: '.06em' }}>✦ Up next</div>
-                <div style={{ fontSize: mobile ? 12 : 14, lineHeight: 1.35, color: navy, fontWeight: 600 }}>{UPCOMING_EVENTS[0].title} · {UPCOMING_EVENTS[0].mo} {UPCOMING_EVENTS[0].day}</div>
+                <div style={{ fontSize: mobile ? 12 : 14, lineHeight: 1.35, color: navy, fontWeight: 600 }}>{UPCOMING_EVENTS[0].title} · {UPCOMING_EVENTS[0].mo.charAt(0).toUpperCase() + UPCOMING_EVENTS[0].mo.slice(1).toLowerCase()} {UPCOMING_EVENTS[0].day}</div>
               </Sticker>
             )}
             <div style={{
