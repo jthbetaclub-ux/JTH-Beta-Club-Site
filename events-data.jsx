@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 5/29/2026, 1:05:58 PM ET
+// Last updated: 6/6/2026, 8:07:27 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -50,6 +50,14 @@ const RECURRING_EVENTS = [
     "spots": "10",
     "url": "https://cabletwo.net/horsle/",
     "url2": "https://www.nytimes.com/games/wordle/index.html"
+  },
+  {
+    "title": "Preston on wheels donation drive",
+    "dates": "6/7, 6/8",
+    "detail": "buy him oil",
+    "spots": "100",
+    "url": "https://prestononwheels.com",
+    "url2": ""
   }
 ];
 
