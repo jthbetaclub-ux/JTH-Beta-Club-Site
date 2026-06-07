@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 6/6/2026, 8:07:27 PM ET
+// Last updated: 6/6/2026, 8:08:10 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -34,31 +34,6 @@ const UPCOMING_EVENTS = [
   }
 ];
 
-const RECURRING_EVENTS = [
-  {
-    "title": "Healthy Kids Running Series",
-    "dates": "4/12, 4/19, 4/26, 5/03,  5/10, 5/24",
-    "detail": "run",
-    "spots": "20",
-    "url": "apple.com",
-    "url2": "target.com"
-  },
-  {
-    "title": "Hang out with Ford",
-    "dates": "6/32, 7/84",
-    "detail": "Hang out with ford cause he has no friends",
-    "spots": "10",
-    "url": "https://cabletwo.net/horsle/",
-    "url2": "https://www.nytimes.com/games/wordle/index.html"
-  },
-  {
-    "title": "Preston on wheels donation drive",
-    "dates": "6/7, 6/8",
-    "detail": "buy him oil",
-    "spots": "100",
-    "url": "https://prestononwheels.com",
-    "url2": ""
-  }
-];
+const RECURRING_EVENTS = [];
 
 Object.assign(window, { UPCOMING_EVENTS, RECURRING_EVENTS });
