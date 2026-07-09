@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 6/6/2026, 8:08:10 PM ET
+// Last updated: 7/9/2026, 10:25:24 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -30,6 +30,16 @@ const UPCOMING_EVENTS = [
     "spots": "10",
     "url": "https://www.signupgenius.com/go/904054BAFAD28A1F94-63997107-beta#/",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-63999879-holly#/",
+    "dateNote": ""
+  },
+  {
+    "title": "At starbcuks",
+    "day": "9",
+    "mo": "JUL",
+    "detail": "Making a website",
+    "spots": "2",
+    "url": "claude.ai",
+    "url2": "",
     "dateNote": ""
   }
 ];
