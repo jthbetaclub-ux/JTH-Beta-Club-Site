@@ -51,13 +51,13 @@ const INFO_TILES = [
     id: 'leadership',
     icon: '★',
     title: 'Current Leadership',
-    sub: 'Meet your officers, committee chairs, and advisors for 2025–26.',
+    sub: 'Meet your officers, committee chairs, and advisors for 2025-26.',
   },
   {
     id: 'requirements',
     icon: '✓',
     title: 'Member Requirements',
-    sub: 'GPA, hours, events, and log deadlines — by grade level.',
+    sub: 'GPA, hours, events, and log deadlines - by grade level.',
   },
   {
     id: 'slides',
@@ -79,16 +79,15 @@ const INFO_TILES = [
 function PhotoSlot({ ratio = '4 / 3', label = 'photo', style }) {
   return (
     <div
+      className="jth-skeleton"
       style={{
         aspectRatio: ratio,
         width: '100%',
-        background:
-          'repeating-linear-gradient(135deg, rgba(4,41,78,.06) 0 8px, rgba(4,41,78,.02) 8px 16px)',
         border: '1.5px dashed rgba(4,41,78,.25)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'rgba(4,41,78,.55)',
+        color: 'rgba(4,41,78,.35)',
         fontFamily: 'ui-monospace, SFMono-Regular, Menlo, monospace',
         fontSize: 12,
         letterSpacing: '.04em',
@@ -98,7 +97,7 @@ function PhotoSlot({ ratio = '4 / 3', label = 'photo', style }) {
         ...style,
       }}
     >
-      <span>{label}</span>
+      <span style={{ position: 'relative', zIndex: 1 }}>{label}</span>
     </div>
   );
 }
@@ -196,6 +195,15 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
         from { transform: rotate(-1.5deg) scaleX(0); }
         to   { transform: rotate(-1.5deg) scaleX(1); }
       }
+      @keyframes jthShimmer {
+        0%   { background-position: -200% 0; }
+        100% { background-position:  200% 0; }
+      }
+      .jth-skeleton {
+        background: linear-gradient(90deg, rgba(4,41,78,.06) 25%, rgba(4,41,78,.13) 50%, rgba(4,41,78,.06) 75%);
+        background-size: 200% 100%;
+        animation: jthShimmer 1.6s ease-in-out infinite;
+      }
       .jth-nav-hl { transform-origin: left center; }
       .jth-nav-btn:not(.jth-nav-active):hover .jth-nav-hl {
         animation: jthSweep 0.25s cubic-bezier(.25,.46,.45,.94) forwards;
@@ -221,17 +229,8 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
           borderBottom: `2px solid ${navy}`,
           position: 'sticky', top: 0, background: 'var(--bg)', zIndex: 50,
         }}>
-          <button onClick={() => setPage('home')} style={{ all: 'unset', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span style={{
-              width: mobile ? 40 : 52, height: mobile ? 40 : 52,
-              background: yellow, border: `2.5px solid ${navy}`,
-              transform: 'rotate(-6deg)', display: 'grid', placeItems: 'center',
-              fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 22 : 30,
-              lineHeight: 1, boxShadow: `4px 4px 0 ${navy}`, flexShrink: 0,
-            }}>β</span>
-            <span style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 16 : 22, letterSpacing: '-.02em', textTransform: 'uppercase' }}>
-              JTH Beta Club
-            </span>
+          <button onClick={() => setPage('home')} style={{ all: 'unset', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
+            <img src="betaclublogo.png" alt="JTH Beta Club" style={{ height: mobile ? 40 : 52, width: 'auto' }} />
           </button>
 
           {/* Desktop nav */}
@@ -375,7 +374,9 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
             fontSize: 12, color: 'rgba(255,255,255,.5)',
           }}>
             <span>© {new Date().getFullYear()} JTH Beta Club · National Beta Chapter</span>
-            <span>Site by Beta officers</span>
+            <a href="https://clymerwebdesign.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}>
+              <img src="CWD_transparent.png" alt="Climer Web Design" style={{ height: 28, width: 'auto', opacity: .7 }} />
+            </a>
           </div>
         </footer>
       </div>

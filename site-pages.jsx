@@ -18,11 +18,41 @@ function CountUp({ to, prefix = '', suffix = '', duration = 1200 }) {
   return <>{prefix}{val.toLocaleString()}{suffix}</>;
 }
 
+function useLoaded(delay = 200) {
+  const [loaded, setLoaded] = React.useState(false);
+  React.useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), delay);
+    return () => clearTimeout(t);
+  }, []);
+  return loaded;
+}
+
+function PageSkeleton() {
+  const mobile = useMobile();
+  const navy = '#04294e';
+  return (
+    <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
+      <div className="jth-skeleton" style={{ height: 14, width: 110, marginBottom: 22, borderRadius: 2 }} />
+      <div className="jth-skeleton" style={{ height: mobile ? 58 : 96, width: '68%', marginBottom: 14, borderRadius: 2 }} />
+      <div className="jth-skeleton" style={{ height: mobile ? 58 : 96, width: '48%', marginBottom: 48, borderRadius: 2 }} />
+      <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)', gap: 0, border: `2.5px solid rgba(4,41,78,.12)` }}>
+        {[1, 2, 3].map((i) => (
+          <div key={i} style={{ padding: mobile ? 20 : 28, borderRight: !mobile && i < 3 ? `2.5px solid rgba(4,41,78,.12)` : 'none' }}>
+            <div className="jth-skeleton" style={{ height: mobile ? 180 : 240, borderRadius: 2 }} />
+          </div>
+        ))}
+      </div>
+    </main>
+  );
+}
+
 // =============================================================== HOME
 function HomePage({ fonts, setPage }) {
   const navy = '#04294e';
   const yellow = '#FFD140';
   const mobile = useMobile();
+  const loaded = useLoaded();
+  if (!loaded) return <PageSkeleton />;
 
   return (
     <main>
@@ -91,6 +121,19 @@ function HomePage({ fonts, setPage }) {
       </section>
 
 
+      {/* PHOTO COLLAGE */}
+      <section style={{ padding: mobile ? '32px 20px' : '48px 48px', borderBottom: `2px solid ${navy}` }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: mobile ? 'repeat(3, 1fr)' : 'repeat(6, 1fr)',
+          gap: mobile ? 8 : 12,
+        }}>
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <PhotoSlot key={i} ratio="3/4" label={`photo ${i}`} />
+          ))}
+        </div>
+      </section>
+
       {/* FEATURED EVENT */}
       <section style={{ padding: mobile ? '48px 20px' : '88px 48px', borderBottom: `2px solid ${navy}` }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: mobile ? 20 : 32, flexWrap: 'wrap' }}>
@@ -108,7 +151,7 @@ function HomePage({ fonts, setPage }) {
           <div style={{ padding: mobile ? 24 : 36, background: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               <p style={{ fontSize: mobile ? 15 : 17, lineHeight: 1.55, fontWeight: 500, margin: '0 0 16px' }}>
-                After raising over $5,000 in monetary and bedding donations last spring, Hoggard Beta sponsored a Bed Build with Sleep In Heavenly Peace — a local nonprofit that builds and delivers beds to kids in Wilmington who don't have one.
+                After raising over $5,000 in monetary and bedding donations last spring, Hoggard Beta sponsored a Bed Build with Sleep In Heavenly Peace, a local nonprofit that builds and delivers beds to kids in Wilmington who don't have one.
               </p>
               <p style={{ fontSize: mobile ? 15 : 17, lineHeight: 1.55, fontWeight: 500, margin: 0 }}>
                 Hoggard Betas worked alongside community members to build <strong>25 beds for kids in our town</strong>. We're doing it again this spring.
@@ -156,6 +199,8 @@ function AboutPage({ fonts, setPage }) {
   const navy = '#04294e';
   const yellow = '#FFD140';
   const mobile = useMobile();
+  const loaded = useLoaded();
+  if (!loaded) return <PageSkeleton />;
 
   return (
     <main>
@@ -176,11 +221,11 @@ function AboutPage({ fonts, setPage }) {
             As part of a nationwide network, we uphold the National Beta Club's mission of promoting academic achievement and community involvement. But more than that, Hoggard Beta is a student-driven club, run by a dedicated team of officers who manage events, volunteer opportunities, competitions, and this website.
           </p>
           <p style={{ fontSize: 15, lineHeight: 1.6, color: 'rgba(4,41,78,.75)', margin: 0 }}>
-            Membership isn't just about earning service hours — it's about being an engaged leader and making a difference in both our school and community. We encourage every member to stay active, take initiative, and represent the values that define Beta.
+            Membership isn't just about earning service hours - it's about being an engaged leader and making a difference in both our school and community. We encourage every member to stay active, take initiative, and represent the values that define Beta.
           </p>
         </div>
         <div style={{ position: 'relative', paddingBottom: mobile ? 0 : 18 }}>
-          <PhotoSlot ratio="4/5" label="officer team · 2025–26" />
+          <PhotoSlot ratio="4/5" label="officer team · 2025-26" />
           <Sticker rotate={4} shadow={navy} bg={yellow} style={{ position: 'absolute', bottom: mobile ? 8 : -18, right: mobile ? 8 : -18, fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 12 : 15, textTransform: 'uppercase' }}>
             ✦ Largest service club in SE NC
           </Sticker>
@@ -210,7 +255,7 @@ function AboutPage({ fonts, setPage }) {
 
       <section style={{ background: navy, color: '#fff', padding: mobile ? '40px 20px' : '56px 48px', display: 'flex', alignItems: mobile ? 'flex-start' : 'center', justifyContent: 'space-between', flexDirection: mobile ? 'column' : 'row', gap: 24 }}>
         <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(32px, 5vw, 56px)', letterSpacing: '-.03em', textTransform: 'uppercase', lineHeight: .95 }}>Want in? Apply.</div>
-        <button onClick={() => setPage('info')} style={{ all: 'unset', cursor: 'pointer', background: yellow, color: navy, padding: '18px 28px', fontFamily: fonts.head, fontWeight: 900, fontSize: 18, textTransform: 'uppercase', border: `2.5px solid ${yellow}`, boxShadow: `5px 5px 0 #fff` }}>
+        <button onClick={() => setPage('applications')} style={{ all: 'unset', cursor: 'pointer', background: yellow, color: navy, padding: '18px 28px', fontFamily: fonts.head, fontWeight: 900, fontSize: 18, textTransform: 'uppercase', border: `2.5px solid ${yellow}`, boxShadow: `5px 5px 0 #fff` }}>
           See applications →
         </button>
       </section>
@@ -223,8 +268,10 @@ function SignupPage({ fonts }) {
   const navy = '#04294e';
   const yellow = '#FFD140';
   const mobile = useMobile();
+  const loaded = useLoaded();
   const [tab, setTab] = React.useState('upcoming');
   const events = tab === 'recurring' ? RECURRING_EVENTS : UPCOMING_EVENTS;
+  if (!loaded) return <PageSkeleton />;
 
   return (
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
@@ -249,26 +296,6 @@ function SignupPage({ fonts }) {
             color: tab === id ? yellow : navy,
             borderRight: i === 0 ? `2.5px solid ${navy}` : 'none',
           }}>{label}</button>
-        ))}
-      </div>
-
-      {/* HOUR LOG DUE DATES */}
-      <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)', gap: 0, border: `2.5px solid ${navy}`, marginBottom: mobile ? 36 : 56 }}>
-        {[
-          { l: 'Fall semester log', d: 'Jan 7, 2026', sub: 'All grades' },
-          { l: 'Spring log · Seniors', d: 'May 1, 2026', sub: 'Earlier deadline' },
-          { l: 'Spring log · Sophomores & Juniors', d: 'May 25, 2026', sub: 'Standard deadline' },
-        ].map((d, i) => (
-          <div key={i} style={{
-            padding: '22px 24px',
-            background: i === 1 ? yellow : '#fff',
-            borderRight: mobile ? 'none' : (i === 2 ? 'none' : `2.5px solid ${navy}`),
-            borderBottom: mobile && i < 2 ? `2.5px solid ${navy}` : 'none',
-          }}>
-            <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', color: navy, opacity: .75 }}>{d.l}</div>
-            <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 28 : 36, lineHeight: 1, letterSpacing: '-.025em', color: navy, marginTop: 8, textTransform: 'uppercase' }}>{d.d}</div>
-            <div style={{ fontSize: 13, marginTop: 8, fontWeight: 600, color: navy, opacity: .7 }}>{d.sub}</div>
-          </div>
         ))}
       </div>
 
@@ -330,6 +357,29 @@ function SignupPage({ fonts }) {
           ))}
         </div>
       )}
+
+      {/* HOUR LOG DUE DATES */}
+      <div style={{ marginTop: mobile ? 36 : 56 }}>
+        <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 16, opacity: .7 }}>Hour log due dates</div>
+        <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)', gap: 0, border: `2.5px solid ${navy}` }}>
+          {[
+            { l: 'Fall semester log', d: 'TBD', sub: 'All grades' },
+            { l: 'Spring log · Seniors', d: 'TBD', sub: 'Earlier deadline' },
+            { l: 'Spring log · Sophomores & Juniors', d: 'TBD', sub: 'Standard deadline' },
+          ].map((d, i) => (
+            <div key={i} style={{
+              padding: '22px 24px',
+              background: i === 1 ? yellow : '#fff',
+              borderRight: mobile ? 'none' : (i === 2 ? 'none' : `2.5px solid ${navy}`),
+              borderBottom: mobile && i < 2 ? `2.5px solid ${navy}` : 'none',
+            }}>
+              <div style={{ fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', color: navy, opacity: .75 }}>{d.l}</div>
+              <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 28 : 36, lineHeight: 1, letterSpacing: '-.025em', color: navy, marginTop: 8, textTransform: 'uppercase' }}>{d.d}</div>
+              <div style={{ fontSize: 13, marginTop: 8, fontWeight: 600, color: navy, opacity: .7 }}>{d.sub}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </main>
   );
 }
@@ -339,6 +389,8 @@ function VolunteersPage({ fonts }) {
   const navy = '#04294e';
   const yellow = '#FFD140';
   const mobile = useMobile();
+  const loaded = useLoaded();
+  if (!loaded) return <PageSkeleton />;
 
   return (
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
@@ -347,7 +399,7 @@ function VolunteersPage({ fonts }) {
         Need <MarkerHighlight animate={true}>hands?</MarkerHighlight><br/>We've got 'em.
       </h1>
       <p style={{ fontSize: mobile ? 16 : 19, lineHeight: 1.5, maxWidth: 760, margin: mobile ? '0 0 36px' : '0 0 56px', fontWeight: 500 }}>
-        Nonprofits, schools, and community orgs across the Wilmington area — tell us what you need and our community outreach coordinators will be in touch within 24–72 hours.
+        Nonprofits, schools, and community orgs across the Wilmington area. Tell us what you need and our community outreach coordinators will be in touch within 24-72 hours.
       </p>
 
       <div style={{ border: `2.5px solid ${navy}`, background: '#fff', boxShadow: `10px 10px 0 ${yellow}` }}>
@@ -369,7 +421,9 @@ function InfoPage({ fonts, setPage }) {
   const navy = '#04294e';
   const yellow = '#FFD140';
   const mobile = useMobile();
+  const loaded = useLoaded();
   const tileBgs = ['#fff', yellow, navy, '#fff'];
+  if (!loaded) return <PageSkeleton />;
 
   return (
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
@@ -449,6 +503,8 @@ function ContactPage({ fonts }) {
   const navy = '#04294e';
   const yellow = '#FFD140';
   const mobile = useMobile();
+  const loaded = useLoaded();
+  if (!loaded) return <PageSkeleton />;
 
   return (
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
@@ -499,14 +555,16 @@ function LeadershipPage({ fonts, setPage }) {
   const navy = '#04294e';
   const yellow = '#FFD140';
   const mobile = useMobile();
+  const loaded = useLoaded();
   const cols = mobile ? 2 : 4;
   const totalRows = Math.ceil(OFFICERS.length / cols);
+  if (!loaded) return <PageSkeleton />;
 
   return (
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
       <BackButton label="Info" to="info" setPage={setPage} yellow={yellow} />
 
-      <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025–26</div>
+      <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025-26</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(52px, 10vw, 128px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: '0 0 48px' }}>
         Current<br/><MarkerHighlight animate={true}>Leadership.</MarkerHighlight>
       </h1>
@@ -565,6 +623,7 @@ function RequirementsPage({ fonts, setPage }) {
   const navy = '#04294e';
   const yellow = '#FFD140';
   const mobile = useMobile();
+  const loaded = useLoaded();
 
   const grades = [
     { g: 'Sophomores', hrs: '20', events: '2 / semester', gpa: '3.6 unweighted\n3.8 weighted', fallDue: 'Jan 7, 2026', springDue: 'May 25, 2026' },
@@ -579,11 +638,13 @@ function RequirementsPage({ fonts, setPage }) {
     { icon: '!', title: 'Log Completion', body: 'Complete your hour log by the deadline for your grade. Late logs may not be accepted. Contact an advisor if you have an extenuating circumstance before the deadline.' },
   ];
 
+  if (!loaded) return <PageSkeleton />;
+
   return (
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
       <BackButton label="Info" to="info" setPage={setPage} yellow={yellow} />
 
-      <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025–26</div>
+      <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025-26</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(44px, 9vw, 120px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: '0 0 20px' }}>
         Member<br/><MarkerHighlight animate={true}>Requirements.</MarkerHighlight>
       </h1>
@@ -645,12 +706,14 @@ function SlidesPage({ fonts, setPage }) {
   const navy = '#04294e';
   const yellow = '#FFD140';
   const mobile = useMobile();
+  const loaded = useLoaded();
+  if (!loaded) return <PageSkeleton />;
 
   return (
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
       <BackButton label="Info" to="info" setPage={setPage} yellow={yellow} />
 
-      <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025–26</div>
+      <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025-26</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(44px, 9vw, 120px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: '0 0 20px' }}>
         Meeting<br/><MarkerHighlight animate={true}>Presentations.</MarkerHighlight>
       </h1>
@@ -662,7 +725,7 @@ function SlidesPage({ fonts, setPage }) {
         <div style={{ width: 64, height: 64, background: yellow, border: `2.5px solid ${navy}`, display: 'grid', placeItems: 'center', fontFamily: fonts.head, fontWeight: 900, fontSize: 28, transform: 'rotate(-4deg)', boxShadow: `4px 4px 0 ${navy}`, flexShrink: 0 }}>▶</div>
         <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 22 : 28, textTransform: 'uppercase', letterSpacing: '-.02em', lineHeight: 1 }}>No presentations yet</div>
         <p style={{ fontSize: 15, lineHeight: 1.6, margin: 0, fontWeight: 500, maxWidth: 480, color: 'rgba(4,41,78,.7)' }}>
-          Check back after meetings — slides will be added here when they're ready.
+          Check back after meetings. Slides will be added here when they're ready.
         </p>
       </div>
     </main>
@@ -674,6 +737,8 @@ function ApplicationsPage({ fonts, setPage }) {
   const navy = '#04294e';
   const yellow = '#FFD140';
   const mobile = useMobile();
+  const loaded = useLoaded();
+  if (!loaded) return <PageSkeleton />;
 
   const apps = [
     {
@@ -698,7 +763,7 @@ function ApplicationsPage({ fonts, setPage }) {
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
       <BackButton label="Info" to="info" setPage={setPage} yellow={yellow} />
 
-      <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025–26</div>
+      <div style={{ fontSize: 14, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.1em', marginBottom: 16 }}>2025-26</div>
       <h1 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(44px, 9vw, 120px)', letterSpacing: '-.04em', textTransform: 'uppercase', lineHeight: .9, margin: '0 0 20px' }}>
         <MarkerHighlight animate={true}>Applications.</MarkerHighlight>
       </h1>
@@ -706,7 +771,7 @@ function ApplicationsPage({ fonts, setPage }) {
       <div style={{ border: `2.5px solid ${navy}`, background: yellow, padding: mobile ? '24px 24px' : '28px 36px', marginBottom: mobile ? 36 : 56, display: 'flex', alignItems: mobile ? 'flex-start' : 'center', gap: 16, flexDirection: mobile ? 'column' : 'row', boxShadow: `6px 6px 0 ${navy}` }}>
         <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 28, lineHeight: 1, flexShrink: 0 }}>✕</div>
         <div>
-          <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 20 : 24, textTransform: 'uppercase', letterSpacing: '-.01em', lineHeight: 1, marginBottom: 6 }}>Applications are closed for 2025–2026</div>
+          <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 20 : 24, textTransform: 'uppercase', letterSpacing: '-.01em', lineHeight: 1, marginBottom: 6 }}>Applications are closed for 2025-2026</div>
           <p style={{ fontSize: 15, lineHeight: 1.55, margin: 0, fontWeight: 500 }}>The application window for the current school year has passed. Check back in the fall when new membership applications open.</p>
         </div>
       </div>
