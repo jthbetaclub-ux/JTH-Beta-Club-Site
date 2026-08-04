@@ -398,7 +398,7 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
               <a href="https://clymerwebdesign.com" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,.5)', textDecoration: 'none', fontSize: 12 }}>Climer Web Design</a>
             ) : (
               <a href="https://clymerwebdesign.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}>
-                <img src="https://res.cloudinary.com/dbc9mudek/image/upload/v1785864296/CWD_transparent_mbuhj4.png" alt="Climer Web Design" onError={() => setCwdErr(true)} style={{ height: 28, width: 'auto', opacity: .7 }} />
+                <img src="https://res.cloudinary.com/dbc9mudek/image/upload/v1785864296/CWD_transparent_mbuhj4.png" alt="Climer Web Design" onError={() => setCwdErr(true)} style={{ height: 28, width: 'auto', opacity: .5, filter: 'grayscale(1) brightness(10)' }} />
               </a>
             )}
           </div>

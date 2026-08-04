@@ -180,13 +180,6 @@ function HomePage({ fonts, setPage }) {
                 Hoggard Betas worked alongside community members to build <strong>25 beds for kids in our town</strong>. We're doing it again this spring.
               </p>
             </div>
-            <button onClick={() => setPage('signup')} style={{
-              all: 'unset', cursor: 'pointer', marginTop: 20,
-              background: navy, color: yellow,
-              padding: '14px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 15,
-              textTransform: 'uppercase', alignSelf: 'flex-start',
-              boxShadow: `4px 4px 0 ${yellow}`,
-            }}>Sign up for April 18 →</button>
           </div>
         </div>
       </section>
@@ -197,13 +190,11 @@ function HomePage({ fonts, setPage }) {
           <h2 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 'clamp(32px, 6vw, 72px)', margin: 0, letterSpacing: '-.03em', textTransform: 'uppercase', lineHeight: .95 }}>The four pillars</h2>
           {!mobile && <div style={{ flex: 1, height: 2, background: navy, marginBottom: 14 }} />}
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: 0, border: `2.5px solid ${navy}` }}>
+        <div style={{ display: 'grid', gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: '2.5px', background: navy, border: `2.5px solid ${navy}` }}>
           {PILLARS.map((c, i) => (
             <div key={i} style={{
               background: i % 2 === 0 ? '#fff' : yellow,
               padding: mobile ? 20 : 28,
-              borderRight: mobile ? (i % 2 === 0 ? `2.5px solid ${navy}` : 'none') : (i === PILLARS.length - 1 ? 'none' : `2.5px solid ${navy}`),
-              borderBottom: mobile && i < 2 ? `2.5px solid ${navy}` : 'none',
               display: 'flex', flexDirection: 'column', gap: 10, minHeight: mobile ? 200 : 260,
             }}>
               <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 28 : 40, color: navy, lineHeight: 1, letterSpacing: '-.03em' }}>{c.n}</div>
@@ -260,12 +251,10 @@ function AboutPage({ fonts, setPage }) {
         <p style={{ fontSize: mobile ? 18 : 22, lineHeight: 1.45, maxWidth: 880, fontWeight: 500, margin: '0 0 10px' }}>
           To promote the ideals of academic achievement, character, service, and leadership among students.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: 0, border: `2.5px solid ${navy}`, marginTop: mobile ? 28 : 40 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: mobile ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', gap: '2.5px', background: navy, border: `2.5px solid ${navy}`, marginTop: mobile ? 28 : 40 }}>
           {PILLARS.map((c, i) => (
             <div key={i} style={{
               background: i % 2 === 0 ? '#fff' : yellow, padding: mobile ? 20 : 28,
-              borderRight: mobile ? (i % 2 === 0 ? `2.5px solid ${navy}` : 'none') : (i === PILLARS.length - 1 ? 'none' : `2.5px solid ${navy}`),
-              borderBottom: mobile && i < 2 ? `2.5px solid ${navy}` : 'none',
               minHeight: mobile ? 180 : 220,
             }}>
               <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 28 : 36, color: navy, lineHeight: 1, letterSpacing: '-.03em' }}>{c.n}</div>
