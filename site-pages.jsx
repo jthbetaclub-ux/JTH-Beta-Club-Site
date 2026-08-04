@@ -144,8 +144,15 @@ function HomePage({ fonts, setPage }) {
           gridTemplateColumns: mobile ? 'repeat(3, 1fr)' : 'repeat(6, 1fr)',
           gap: mobile ? 8 : 12,
         }}>
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <SmartPhoto key={i} src={`betacollage${i}.png`} alt={`Beta Club photo ${i}`} ratio="3/4" label={`photo ${i}`} />
+          {[
+            'https://res.cloudinary.com/dbc9mudek/image/upload/v1785864273/betacollage1_gjdkku.jpg',
+            'https://res.cloudinary.com/dbc9mudek/image/upload/v1785864267/betacollage2_zwz6tx.jpg',
+            'https://res.cloudinary.com/dbc9mudek/image/upload/v1785864270/betacollage3_ybrpmt.jpg',
+            'https://res.cloudinary.com/dbc9mudek/image/upload/v1785864270/betacollage4_ucozr0.jpg',
+            'https://res.cloudinary.com/dbc9mudek/image/upload/v1785864283/betacollage5_g4aofc.png',
+            'https://res.cloudinary.com/dbc9mudek/image/upload/v1785864264/betacollage6_premrm.png',
+          ].map((src, i) => (
+            <SmartPhoto key={i} src={src} alt={`Beta Club photo ${i + 1}`} ratio="3/4" label={`photo ${i + 1}`} />
           ))}
         </div>
       </section>
@@ -162,7 +169,7 @@ function HomePage({ fonts, setPage }) {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1.2fr 1fr', gap: 0, border: `2.5px solid ${navy}` }}>
           <div style={{ padding: 8, borderRight: mobile ? 'none' : `2.5px solid ${navy}`, borderBottom: mobile ? `2.5px solid ${navy}` : 'none' }}>
-            <SmartPhoto src="SIHPBB.png" alt="Sleep In Heavenly Peace Bed Build" ratio="4/3" label="bed build · spring '25" />
+            <SmartPhoto src="https://res.cloudinary.com/dbc9mudek/image/upload/v1785864376/SIHPBB_sm9uw5.jpg" alt="Sleep In Heavenly Peace Bed Build" ratio="4/3" label="bed build · spring '25" />
           </div>
           <div style={{ padding: mobile ? 24 : 36, background: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
