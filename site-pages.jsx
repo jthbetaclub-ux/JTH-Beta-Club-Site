@@ -23,12 +23,12 @@ function SmartPhoto({ src, alt = '', ratio = '4/3', label, style }) {
   const [err, setErr] = React.useState(false);
   if (err) return <PhotoSlot ratio={ratio} label={label || alt} style={style} />;
   return (
-    <div style={{ aspectRatio: ratio, overflow: 'hidden', width: '100%', ...style }}>
+    <div style={{ aspectRatio: ratio, overflow: 'hidden', width: '100%', maxWidth: '100%', position: 'relative', ...style }}>
       <img
         src={src}
         alt={alt}
         onError={() => setErr(true)}
-        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
       />
     </div>
   );
@@ -71,7 +71,7 @@ function HomePage({ fonts, setPage }) {
   if (!loaded) return <PageSkeleton />;
 
   return (
-    <main>
+    <main style={{ overflowX: 'hidden' }}>
       {/* HERO */}
       <section style={{ position: 'relative', padding: mobile ? '48px 20px 40px' : '80px 48px 64px', borderBottom: `2px solid ${navy}` }}>
         <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1.4fr 1fr', gap: mobile ? 32 : 56, alignItems: 'start' }}>
