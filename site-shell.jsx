@@ -183,6 +183,8 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
   const navy = '#04294e';
   const mobile = useIsMobile();
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [logoErr, setLogoErr] = React.useState(false);
+  const [cwdErr, setCwdErr] = React.useState(false);
 
   // Inject animation CSS once
   React.useEffect(() => {
@@ -229,8 +231,26 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
           borderBottom: `2px solid ${navy}`,
           position: 'sticky', top: 0, background: 'var(--bg)', zIndex: 50,
         }}>
-          <button onClick={() => setPage('home')} style={{ all: 'unset', cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-            <img src="betaclublogo.png" alt="JTH Beta Club" style={{ height: mobile ? 40 : 52, width: 'auto' }} />
+          <button onClick={() => setPage('home')} style={{ all: 'unset', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 12 }}>
+            {!logoErr ? (
+              <img
+                src="betaclublogo.png"
+                alt=""
+                onError={() => setLogoErr(true)}
+                style={{ height: mobile ? 40 : 52, width: 'auto' }}
+              />
+            ) : (
+              <span style={{
+                width: mobile ? 40 : 52, height: mobile ? 40 : 52,
+                background: yellow, border: `2.5px solid ${navy}`,
+                transform: 'rotate(-6deg)', display: 'grid', placeItems: 'center',
+                fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 22 : 30,
+                lineHeight: 1, boxShadow: `4px 4px 0 ${navy}`, flexShrink: 0,
+              }}>β</span>
+            )}
+            <span style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 16 : 22, letterSpacing: '-.02em', textTransform: 'uppercase' }}>
+              JTH Beta Club
+            </span>
           </button>
 
           {/* Desktop nav */}
@@ -374,9 +394,13 @@ function Shell({ children, page, setPage, fonts, yellow = '#FFD140' }) {
             fontSize: 12, color: 'rgba(255,255,255,.5)',
           }}>
             <span>© {new Date().getFullYear()} JTH Beta Club · National Beta Chapter</span>
-            <a href="https://clymerwebdesign.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}>
-              <img src="CWD_transparent.png" alt="Climer Web Design" style={{ height: 28, width: 'auto', opacity: .7 }} />
-            </a>
+            {cwdErr ? (
+              <a href="https://clymerwebdesign.com" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,.5)', textDecoration: 'none', fontSize: 12 }}>Climer Web Design</a>
+            ) : (
+              <a href="https://clymerwebdesign.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center' }}>
+                <img src="CWD_transparent.png" alt="Climer Web Design" onError={() => setCwdErr(true)} style={{ height: 28, width: 'auto', opacity: .7 }} />
+              </a>
+            )}
           </div>
         </footer>
       </div>

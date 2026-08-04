@@ -18,6 +18,22 @@ function CountUp({ to, prefix = '', suffix = '', duration = 1200 }) {
   return <>{prefix}{val.toLocaleString()}{suffix}</>;
 }
 
+// Shows a real image; falls back to skeleton PhotoSlot if it fails to load
+function SmartPhoto({ src, alt = '', ratio = '4/3', label, style }) {
+  const [err, setErr] = React.useState(false);
+  if (err) return <PhotoSlot ratio={ratio} label={label || alt} style={style} />;
+  return (
+    <div style={{ aspectRatio: ratio, overflow: 'hidden', width: '100%', ...style }}>
+      <img
+        src={src}
+        alt={alt}
+        onError={() => setErr(true)}
+        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+      />
+    </div>
+  );
+}
+
 function useLoaded(delay = 200) {
   const [loaded, setLoaded] = React.useState(false);
   React.useEffect(() => {
@@ -129,7 +145,7 @@ function HomePage({ fonts, setPage }) {
           gap: mobile ? 8 : 12,
         }}>
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <PhotoSlot key={i} ratio="3/4" label={`photo ${i}`} />
+            <SmartPhoto key={i} src={`betacollage${i}.png`} alt={`Beta Club photo ${i}`} ratio="3/4" label={`photo ${i}`} />
           ))}
         </div>
       </section>
@@ -146,7 +162,7 @@ function HomePage({ fonts, setPage }) {
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : '1.2fr 1fr', gap: 0, border: `2.5px solid ${navy}` }}>
           <div style={{ padding: 8, borderRight: mobile ? 'none' : `2.5px solid ${navy}`, borderBottom: mobile ? `2.5px solid ${navy}` : 'none' }}>
-            <PhotoSlot ratio="4/3" label="bed build · spring '25" />
+            <SmartPhoto src="SIHPBB.png" alt="Sleep In Heavenly Peace Bed Build" ratio="4/3" label="bed build · spring '25" />
           </div>
           <div style={{ padding: mobile ? 24 : 36, background: '#fff', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
@@ -799,6 +815,7 @@ function ApplicationsPage({ fonts, setPage }) {
 }
 
 Object.assign(window, {
+  SmartPhoto,
   HomePage, AboutPage, SignupPage, VolunteersPage, InfoPage, ContactPage,
   LeadershipPage, RequirementsPage, SlidesPage, ApplicationsPage,
 });
