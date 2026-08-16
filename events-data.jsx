@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/16/2026, 6:17:06 PM ET
+// Last updated: 8/16/2026, 6:18:19 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -14,7 +14,7 @@ const UPCOMING_EVENTS = [
   },
   {
     "title": "Teacher Classroom Help",
-    "day": "17",
+    "day": "17, 18",
     "mo": "AUGUST",
     "detail": "Help teachers in their classrooms!",
     "spots": "15",
