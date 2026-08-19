@@ -31,19 +31,19 @@ const ADVISORS = [
 ];
 
 const OFFICERS = [
-  { name: 'Perry Thompson', title: 'President' },
-  { name: 'Greyson Clymer', title: 'Vice-President' },
-  { name: 'Cassidy Freeman', title: 'Secretary' },
-  { name: 'Meghan Zylich', title: 'Event Coordinator' },
-  { name: 'Laura Beth Jenkins', title: 'Event Coordinator' },
-  { name: 'Liza Bullock', title: 'Event Coordinator' },
-  { name: 'Lily Danielsen', title: 'Social Media Coordinator' },
-  { name: 'Eve Berger', title: 'Upper-Classmen Representative' },
-  { name: 'Cambell Nay', title: 'Lower-Classmen Representative' },
-  { name: 'Stella McCorcle', title: 'Community Outreach Coordinator' },
-  { name: 'Bodey Thompson', title: 'Community Outreach Coordinator' },
-  { name: 'Cailyn Freeman', title: 'Historian' },
-  { name: "Aubree O'Rourke", title: 'Historian' },
+  { name: 'Perry Thompson', title: 'President', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164737/perry_kr79wa.png' },
+  { name: 'Greyson Clymer', title: 'Vice-President', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164741/greyson_yxfwwh.png' },
+  { name: 'Cassidy Freeman', title: 'Secretary', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164743/cass_yhfwsc.png' },
+  { name: 'Meghan Zylich', title: 'Event Coordinator', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164738/meghan_kirrwi.png' },
+  { name: 'Laura Beth Jenkins', title: 'Event Coordinator', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164740/laura_bbhzxc.png' },
+  { name: 'Liza Bullock', title: 'Event Coordinator', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164868/liza_x2b74m.png' },
+  { name: 'Lily Danielsen', title: 'Social Media Coordinator', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164739/lily_ciidbs.png' },
+  { name: 'Eve Berger', title: 'Upper-Classmen Representative', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164741/eve_iyqrrz.png' },
+  { name: 'Cambell Nay', title: 'Lower-Classmen Representative', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164743/cambell_j6ibdb.png' },
+  { name: 'Stella McCorcle', title: 'Community Outreach Coordinator', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164737/stella_vhfxst.png' },
+  { name: 'Bodey Thompson', title: 'Community Outreach Coordinator', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164745/bodey_yix3sj.png' },
+  { name: 'Cailyn Freeman', title: 'Historian', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164744/cailyn_siodoj.png' },
+  { name: "Aubree O'Rourke", title: 'Historian', photo: 'https://res.cloudinary.com/dbc9mudek/image/upload/v1787164746/aubree_wefy4y.png' },
 ];
 
 const INFO_TILES = [

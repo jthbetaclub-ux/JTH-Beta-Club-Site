@@ -615,7 +615,7 @@ function LeadershipPage({ fonts, setPage }) {
               borderBottom: isLastRow ? 'none' : `2.5px solid ${navy}`,
               display: 'flex', flexDirection: 'column',
             }}>
-              <PhotoSlot ratio="1/1" label={o.name.split(' ')[0].toLowerCase()} style={{ marginBottom: 14 }} />
+              <SmartPhoto src={o.photo} alt={o.name} ratio="3/4" label={o.name.split(' ')[0].toLowerCase()} style={{ marginBottom: 14 }} />
               <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 14 : 17, textTransform: 'uppercase', letterSpacing: '-.01em', lineHeight: 1.1, marginBottom: 4 }}>
                 {o.name}
               </div>
