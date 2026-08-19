@@ -361,7 +361,7 @@ function SignupPage({ fonts }) {
         <div style={{ flex: 1 }}>
           <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 18 : 22, textTransform: 'uppercase', letterSpacing: '-.01em', marginBottom: 6 }}>Submit Your Hours</div>
           <p style={{ fontSize: 14, lineHeight: 1.5, margin: 0, fontWeight: 500 }}>
-            After each event, use this form to submit your volunteer hours. <strong>Must be submitted within 1 week of the event</strong> — late submissions may not be counted.
+            After each event, use this form to submit your volunteer hours. <strong>Must be submitted within 1 week of the event</strong> — late submissions will not be counted.
           </p>
         </div>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAr0aXqRAeMNiUTWmObl5WPszAWRVJYSPBhBOW3EC2kFQvPA/viewform?usp=header" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-block', background: navy, color: yellow, padding: mobile ? '14px 20px' : '16px 28px', fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 14 : 16, textTransform: 'uppercase', whiteSpace: 'nowrap', boxShadow: `4px 4px 0 #fff`, flexShrink: 0 }}>
