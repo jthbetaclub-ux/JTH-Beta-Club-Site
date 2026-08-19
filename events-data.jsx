@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/19/2026, 10:39:02 AM ET
+// Last updated: 8/19/2026, 10:41:24 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -37,7 +37,7 @@ const UPCOMING_EVENTS = [
 const RECURRING_EVENTS = [
   {
     "title": "Teacher Classroom Help",
-    "dates": "8/17, 8/18",
+    "dates": "8/17 - 8/18",
     "detail": "Help teachers in their classrooms!",
     "spots": "15",
     "url": "https://www.signupgenius.com/go/10C094EAAAF2DA4FECF8-65200269-teacher",
