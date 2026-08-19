@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/19/2026, 11:01:56 AM ET
+// Last updated: 8/19/2026, 11:04:05 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -36,11 +36,11 @@ const UPCOMING_EVENTS = [
 
 const RECURRING_EVENTS = [
   {
-    "title": "Teacher Classroom Help",
-    "dates": "8/17 - 8/18",
-    "detail": "Help teachers in their classrooms!",
-    "spots": "15",
-    "url": "https://www.signupgenius.com/go/10C094EAAAF2DA4FECF8-65200269-teacher",
+    "title": "Pine Valley Methodist Church 49ers",
+    "dates": "Every 3rd Tuesday",
+    "detail": "Volunteers will help serve a meal, set up, clean up, wash dishes, and assist attendees to their tables.",
+    "spots": "10",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65222472-pine",
     "url2": ""
   }
 ];
