@@ -281,9 +281,70 @@ function SignupPage({ fonts }) {
   const yellow = '#FFD140';
   const mobile = useMobile();
   const loaded = useLoaded();
-  const [tab, setTab] = React.useState('upcoming');
-  const events = tab === 'recurring' ? RECURRING_EVENTS : UPCOMING_EVENTS;
   if (!loaded) return <PageSkeleton />;
+
+  const renderEventList = (events, isRecurring) => {
+    if (events.length === 0) {
+      return (
+        <div style={{ border: `2.5px solid ${navy}`, padding: mobile ? '48px 24px' : '64px 48px', textAlign: 'center', background: '#fff' }}>
+          <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 22 : 28, textTransform: 'uppercase', letterSpacing: '-.02em', opacity: .4 }}>No events listed yet</div>
+          <p style={{ fontSize: 14, opacity: .5, marginTop: 8 }}>Check back soon.</p>
+        </div>
+      );
+    }
+    return (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 0, border: `2.5px solid ${navy}` }}>
+        {events.map((e, i) => (
+          <div key={i} style={{
+            background: '#fff',
+            borderBottom: i === events.length - 1 ? 'none' : `2px solid ${navy}`,
+            ...(mobile ? { padding: 20, display: 'flex', flexDirection: 'column', gap: 10 } : { display: 'grid', gridTemplateColumns: isRecurring ? '160px 1fr auto' : '120px 1fr auto', alignItems: 'center', gap: 32, padding: '28px 32px' }),
+          }}>
+            {isRecurring ? (
+              <div style={{
+                background: yellow, border: `2px solid ${navy}`,
+                padding: '10px 14px', alignSelf: mobile ? 'flex-start' : 'stretch',
+                display: 'flex', alignItems: 'center',
+                fontFamily: fonts.head, fontWeight: 700,
+                fontSize: mobile ? 13 : 14, lineHeight: 1.45, color: navy,
+              }}>
+                {e.dates}
+              </div>
+            ) : (
+              <div style={mobile ? { display: 'flex', alignItems: 'baseline', gap: 10 } : {}}>
+                <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 40 : 56, lineHeight: .9, letterSpacing: '-.04em', color: navy }}>{e.day}</div>
+                <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 12 : 14, letterSpacing: '.04em', textTransform: 'uppercase', color: navy }}>{e.mo}</div>
+              </div>
+            )}
+            <div>
+              <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 18 : 24, letterSpacing: '-.015em', textTransform: 'uppercase', marginBottom: 4 }}>{e.title}</div>
+              <div style={{ fontSize: 14, color: navy, opacity: .8, fontWeight: 500 }}>{e.detail}</div>
+              {e.dateNote && (
+                <div style={{ fontSize: 12, fontWeight: 600, color: navy, opacity: .55, marginTop: 4, fontStyle: 'italic' }}>↻ {e.dateNote}</div>
+              )}
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: mobile ? 'flex-start' : 'flex-end', gap: 8 }}>
+              {e.spots && (
+                <div style={{ fontSize: 13, fontWeight: 700, color: navy, textAlign: mobile ? 'left' : 'right' }}>
+                  {e.spots} <span style={{ fontSize: 11, opacity: .7, textTransform: 'uppercase', letterSpacing: '.04em' }}>Slots</span>
+                </div>
+              )}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: mobile ? 'flex-start' : 'flex-end' }}>
+                {e.url ? (
+                  <a href={e.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-block', background: navy, color: yellow, padding: '12px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 14, textTransform: 'uppercase', boxShadow: `3px 3px 0 ${yellow}`, whiteSpace: 'nowrap' }}>Sign up here first →</a>
+                ) : !e.url2 ? (
+                  <span style={{ display: 'inline-block', background: 'rgba(4,41,78,.15)', color: 'rgba(4,41,78,.4)', padding: '12px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 14, textTransform: 'uppercase' }}>Sign up →</span>
+                ) : null}
+                {e.url2 && (
+                  <a href={e.url2} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-block', background: yellow, color: navy, padding: '10px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 13, textTransform: 'uppercase', border: `2px solid ${navy}`, boxShadow: `3px 3px 0 ${navy}`, whiteSpace: 'nowrap' }}>Here second →</a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <main style={{ padding: mobile ? '40px 20px' : '64px 48px' }}>
@@ -295,87 +356,43 @@ function SignupPage({ fonts }) {
         All Beta-sponsored events for the semester. Hours from these count toward your requirement. Sign up below, and add the events to your log within one week of the event.
       </p>
 
-      {/* TABS */}
-      <div style={{ display: 'inline-flex', border: `2.5px solid ${navy}`, marginBottom: mobile ? 28 : 40 }}>
-        {[['upcoming', 'One-Time Events'], ['recurring', 'Recurring Events']].map(([id, label], i) => (
-          <button key={id} onClick={() => setTab(id)} style={{
-            all: 'unset', cursor: 'pointer',
-            padding: mobile ? '12px 18px' : '14px 28px',
-            fontFamily: fonts.head, fontWeight: 900,
-            fontSize: mobile ? 13 : 15,
-            textTransform: 'uppercase', letterSpacing: '.02em',
-            background: tab === id ? navy : '#fff',
-            color: tab === id ? yellow : navy,
-            borderRight: i === 0 ? `2.5px solid ${navy}` : 'none',
-          }}>{label}</button>
-        ))}
+      {/* HOUR SUBMISSION FORM */}
+      <div style={{ border: `2.5px solid ${navy}`, background: yellow, padding: mobile ? '20px 20px' : '24px 28px', marginBottom: mobile ? 36 : 48, display: 'flex', alignItems: mobile ? 'flex-start' : 'center', gap: 20, flexDirection: mobile ? 'column' : 'row', boxShadow: `6px 6px 0 ${navy}` }}>
+        <div style={{ flex: 1 }}>
+          <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 18 : 22, textTransform: 'uppercase', letterSpacing: '-.01em', marginBottom: 6 }}>Submit Your Hours</div>
+          <p style={{ fontSize: 14, lineHeight: 1.5, margin: 0, fontWeight: 500 }}>
+            After each event, use this form to submit your volunteer hours. <strong>Must be submitted within 1 week of the event</strong> — late submissions may not be counted.
+          </p>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdAr0aXqRAeMNiUTWmObl5WPszAWRVJYSPBhBOW3EC2kFQvPA/viewform?usp=header" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-block', background: navy, color: yellow, padding: mobile ? '14px 20px' : '16px 28px', fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 14 : 16, textTransform: 'uppercase', whiteSpace: 'nowrap', boxShadow: `4px 4px 0 #fff`, flexShrink: 0 }}>
+          Submit Hours →
+        </a>
       </div>
 
-      {/* EVENT LIST */}
-      {events.length === 0 ? (
-        <div style={{ border: `2.5px solid ${navy}`, padding: mobile ? '48px 24px' : '64px 48px', textAlign: 'center', background: '#fff' }}>
-          <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 22 : 28, textTransform: 'uppercase', letterSpacing: '-.02em', opacity: .4 }}>No events listed yet</div>
-          <p style={{ fontSize: 14, opacity: .5, marginTop: 8 }}>Check back soon.</p>
+      {/* ONE-TIME EVENTS */}
+      <div style={{ marginBottom: mobile ? 36 : 48 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: mobile ? 16 : 20 }}>
+          <h2 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 22 : 30, textTransform: 'uppercase', letterSpacing: '-.02em', margin: 0, lineHeight: 1 }}>One-Time Events</h2>
+          {!mobile && <div style={{ flex: 1, height: 2, background: navy }} />}
         </div>
-      ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 0, border: `2.5px solid ${navy}` }}>
-          {events.map((e, i) => (
-            <div key={i} style={{
-              background: '#fff',
-              borderBottom: i === events.length - 1 ? 'none' : `2px solid ${navy}`,
-              ...(mobile ? { padding: 20, display: 'flex', flexDirection: 'column', gap: 10 } : { display: 'grid', gridTemplateColumns: tab === 'recurring' ? '160px 1fr auto' : '120px 1fr auto', alignItems: 'center', gap: 32, padding: '28px 32px' }),
-            }}>
-              {tab === 'recurring' ? (
-                <div style={{
-                  background: yellow, border: `2px solid ${navy}`,
-                  padding: '10px 14px', alignSelf: mobile ? 'flex-start' : 'stretch',
-                  display: 'flex', alignItems: 'center',
-                  fontFamily: fonts.head, fontWeight: 700,
-                  fontSize: mobile ? 13 : 14, lineHeight: 1.45, color: navy,
-                }}>
-                  {e.dates}
-                </div>
-              ) : (
-                <div style={mobile ? { display: 'flex', alignItems: 'baseline', gap: 10 } : {}}>
-                  <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 40 : 56, lineHeight: .9, letterSpacing: '-.04em', color: navy }}>{e.day}</div>
-                  <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 12 : 14, letterSpacing: '.04em', textTransform: 'uppercase', color: navy }}>{e.mo}</div>
-                </div>
-              )}
-              <div>
-                <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 18 : 24, letterSpacing: '-.015em', textTransform: 'uppercase', marginBottom: 4 }}>{e.title}</div>
-                <div style={{ fontSize: 14, color: navy, opacity: .8, fontWeight: 500 }}>{e.detail}</div>
-                {e.dateNote && (
-                  <div style={{ fontSize: 12, fontWeight: 600, color: navy, opacity: .55, marginTop: 4, fontStyle: 'italic' }}>↻ {e.dateNote}</div>
-                )}
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', alignItems: mobile ? 'flex-start' : 'flex-end', gap: 8 }}>
-                {e.spots && (
-                  <div style={{ fontSize: 13, fontWeight: 700, color: navy, textAlign: mobile ? 'left' : 'right' }}>
-                    {e.spots} <span style={{ fontSize: 11, opacity: .7, textTransform: 'uppercase', letterSpacing: '.04em' }}>Slots</span>
-                  </div>
-                )}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 6, alignItems: mobile ? 'flex-start' : 'flex-end' }}>
-                  {e.url ? (
-                    <a href={e.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-block', background: navy, color: yellow, padding: '12px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 14, textTransform: 'uppercase', boxShadow: `3px 3px 0 ${yellow}`, whiteSpace: 'nowrap' }}>Sign up here first →</a>
-                  ) : !e.url2 ? (
-                    <span style={{ display: 'inline-block', background: 'rgba(4,41,78,.15)', color: 'rgba(4,41,78,.4)', padding: '12px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 14, textTransform: 'uppercase' }}>Sign up →</span>
-                  ) : null}
-                  {e.url2 && (
-                    <a href={e.url2} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', display: 'inline-block', background: yellow, color: navy, padding: '10px 22px', fontFamily: fonts.head, fontWeight: 900, fontSize: 13, textTransform: 'uppercase', border: `2px solid ${navy}`, boxShadow: `3px 3px 0 ${navy}`, whiteSpace: 'nowrap' }}>Here second →</a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
+        {renderEventList(UPCOMING_EVENTS, false)}
+      </div>
+
+      {/* RECURRING EVENTS */}
+      <div style={{ marginBottom: mobile ? 36 : 48 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: mobile ? 16 : 20 }}>
+          <h2 style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 22 : 30, textTransform: 'uppercase', letterSpacing: '-.02em', margin: 0, lineHeight: 1 }}>Recurring Events</h2>
+          {!mobile && <div style={{ flex: 1, height: 2, background: navy }} />}
         </div>
-      )}
+        {renderEventList(RECURRING_EVENTS, true)}
+      </div>
 
       {/* HOUR LOG DUE DATES */}
-      <div style={{ marginTop: mobile ? 36 : 56 }}>
+      <div>
         <div style={{ fontSize: 13, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.06em', marginBottom: 16, opacity: .7 }}>Hour log due dates</div>
         <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)', gap: 0, border: `2.5px solid ${navy}` }}>
           {[
-            { l: 'Fall semester log', d: 'TBD', sub: 'All grades' },
+            { l: 'Fall semester log', d: 'Jan 15, 2027', sub: 'All grades' },
             { l: 'Spring log · Seniors', d: 'TBD', sub: 'Earlier deadline' },
             { l: 'Spring log · Sophomores & Juniors', d: 'TBD', sub: 'Standard deadline' },
           ].map((d, i) => (
@@ -487,9 +504,9 @@ function InfoPage({ fonts, setPage }) {
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: mobile ? '1fr' : 'repeat(3, 1fr)', gap: 0, border: `2.5px solid ${navy}` }}>
           {[
-            { g: 'Sophomores', hrs: '20', events: '2', gpa: '3.6 / 3.8', logDue: 'May 25' },
-            { g: 'Juniors', hrs: '20', events: '2', gpa: '3.6 / 3.8', logDue: 'May 25' },
-            { g: 'Seniors', hrs: '20', events: '2', gpa: '3.6 / 3.8', logDue: 'May 1' },
+            { g: 'Sophomores', hrs: '20', events: '2', gpa: '3.6 / 3.8', logDue: 'TBD' },
+            { g: 'Juniors', hrs: '20', events: '2', gpa: '3.6 / 3.8', logDue: 'TBD' },
+            { g: 'Seniors', hrs: '20', events: '2', gpa: '3.6 / 3.8', logDue: 'TBD' },
           ].map((r, i) => (
             <div key={i} style={{ padding: 22, background: i % 2 === 0 ? '#fff' : yellow, borderRight: mobile ? 'none' : (i === 2 ? 'none' : `2px solid ${navy}`), borderBottom: mobile && i < 2 ? `2px solid ${navy}` : 'none' }}>
               <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 20, textTransform: 'uppercase', letterSpacing: '-.01em', marginBottom: 12 }}>{r.g}</div>
@@ -638,9 +655,9 @@ function RequirementsPage({ fonts, setPage }) {
   const loaded = useLoaded();
 
   const grades = [
-    { g: 'Sophomores', hrs: '20', events: '2 / semester', gpa: '3.6 unweighted\n3.8 weighted', fallDue: 'Jan 7, 2026', springDue: 'May 25, 2026' },
-    { g: 'Juniors', hrs: '20', events: '2 / semester', gpa: '3.6 unweighted\n3.8 weighted', fallDue: 'Jan 7, 2026', springDue: 'May 25, 2026' },
-    { g: 'Seniors', hrs: '20', events: '2 / semester', gpa: '3.6 unweighted\n3.8 weighted', fallDue: 'Jan 7, 2026', springDue: 'May 1, 2026' },
+    { g: 'Sophomores', hrs: '20', events: '2 / semester', gpa: '3.6 unweighted\n3.8 weighted', fallDue: 'Jan 15, 2027', springDue: 'TBD' },
+    { g: 'Juniors', hrs: '20', events: '2 / semester', gpa: '3.6 unweighted\n3.8 weighted', fallDue: 'Jan 15, 2027', springDue: 'TBD' },
+    { g: 'Seniors', hrs: '20', events: '2 / semester', gpa: '3.6 unweighted\n3.8 weighted', fallDue: 'Jan 15, 2027', springDue: 'TBD' },
   ];
 
   const notes = [
