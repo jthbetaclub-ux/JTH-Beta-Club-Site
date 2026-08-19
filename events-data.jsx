@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/19/2026, 11:10:00 AM ET
+// Last updated: 8/19/2026, 12:19:15 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -9,6 +9,16 @@ const UPCOMING_EVENTS = [
     "detail": "Help Hoggard staff organize laptops!",
     "spots": "8",
     "url": "https://www.signupgenius.com/go/10C094EA9A72DA5FACE9-65210980-freshman",
+    "url2": "",
+    "dateNote": ""
+  },
+  {
+    "title": "Test Event",
+    "day": "20",
+    "mo": "AUGUST",
+    "detail": "blah blah blah",
+    "spots": "10",
+    "url": "apple.com",
     "url2": "",
     "dateNote": ""
   }
