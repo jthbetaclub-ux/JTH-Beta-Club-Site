@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/19/2026, 10:52:01 AM ET
+// Last updated: 8/19/2026, 11:01:56 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -21,6 +21,16 @@ const UPCOMING_EVENTS = [
     "url": "https://www.signupgenius.com/go/10C094EA9A72DA5FACE9-65210980-freshman",
     "url2": "",
     "dateNote": ""
+  },
+  {
+    "title": "Pumpkin Patch",
+    "day": "23",
+    "mo": "OCTOBER",
+    "detail": "Help that church sort pumpkins!",
+    "spots": "30",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65222472-pine#/",
+    "url2": "https://www.target.com/",
+    "dateNote": ""
   }
 ];
 
@@ -31,14 +41,6 @@ const RECURRING_EVENTS = [
     "detail": "Help teachers in their classrooms!",
     "spots": "15",
     "url": "https://www.signupgenius.com/go/10C094EAAAF2DA4FECF8-65200269-teacher",
-    "url2": ""
-  },
-  {
-    "title": "PVMC",
-    "dates": "3rd Tuesday of Every Month",
-    "detail": "blah bah",
-    "spots": "10",
-    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65222472-pine",
     "url2": ""
   }
 ];
