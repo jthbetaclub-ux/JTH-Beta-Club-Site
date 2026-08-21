@@ -1,17 +1,7 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/21/2026, 11:33:33 AM ET
+// Last updated: 8/21/2026, 11:34:04 AM ET
 
 const UPCOMING_EVENTS = [
-  {
-    "title": "Freshman Laptop Assistance",
-    "day": "19",
-    "mo": "AUGUST",
-    "detail": "Help Hoggard staff organize laptops!",
-    "spots": "8",
-    "url": "https://www.signupgenius.com/go/10C094EA9A72DA5FACE9-65210980-freshman",
-    "url2": "",
-    "dateNote": ""
-  },
   {
     "title": "Alliance for Cape Fear Trees",
     "day": "14,15",
