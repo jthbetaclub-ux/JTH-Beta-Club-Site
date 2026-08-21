@@ -1,16 +1,16 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/21/2026, 11:34:04 AM ET
+// Last updated: 8/21/2026, 11:37:20 AM ET
 
 const UPCOMING_EVENTS = [
   {
     "title": "Alliance for Cape Fear Trees",
-    "day": "14,15",
+    "day": "14, 15",
     "mo": "NOVEMBER",
     "detail": "Planting trees in downtown Wilmington!",
     "spots": "50 (25 per day)",
     "url": "https://allianceforcapefeartrees.app.neoncrm.com/forms/volunteer?opportunityId=65",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65296647-alliance",
-    "dateNote": "N/A"
+    "dateNote": ""
   }
 ];
 
