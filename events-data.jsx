@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/21/2026, 11:43:38 AM ET
+// Last updated: 8/21/2026, 11:45:46 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -10,16 +10,6 @@ const UPCOMING_EVENTS = [
     "spots": "50 (25 per day)",
     "url": "https://allianceforcapefeartrees.app.neoncrm.com/forms/volunteer?opportunityId=65",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65296647-alliance",
-    "dateNote": ""
-  },
-  {
-    "title": "Test event",
-    "day": "21",
-    "mo": "OCTOBER",
-    "detail": "Helping out moody",
-    "spots": "10",
-    "url": "target.com",
-    "url2": "",
     "dateNote": ""
   }
 ];
