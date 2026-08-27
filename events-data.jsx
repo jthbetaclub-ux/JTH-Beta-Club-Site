@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/21/2026, 11:45:46 AM ET
+// Last updated: 8/27/2026, 2:00:58 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -10,6 +10,36 @@ const UPCOMING_EVENTS = [
     "spots": "50 (25 per day)",
     "url": "https://allianceforcapefeartrees.app.neoncrm.com/forms/volunteer?opportunityId=65",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65296647-alliance",
+    "dateNote": ""
+  },
+  {
+    "title": "Liam Strong Charity Beach Run",
+    "day": "20",
+    "mo": "SEPTEMBER",
+    "detail": "Passing out waters and helping runners with direction",
+    "spots": "5",
+    "url": "",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65393612-liam",
+    "dateNote": ""
+  },
+  {
+    "title": "Hawk Masters Swimming Association",
+    "day": "7",
+    "mo": "NOVEMBER",
+    "detail": "Checking in swimmers, being a timer, or a videographer",
+    "spots": "20",
+    "url": "https://signup.com/client/invitation2/secure/9828734660120/false#/invitation",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65426419-hawk",
+    "dateNote": ""
+  },
+  {
+    "title": "Wrightsville Beach Elementary",
+    "day": "2",
+    "mo": "OCTOBER",
+    "detail": "Helping students of WBS play games, get prizes, etc.",
+    "spots": "30",
+    "url": "https://www.signupgenius.com/go/20F094CAEA82CA0FA7-65412542-fall",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65433465-wrightsville",
     "dateNote": ""
   }
 ];
