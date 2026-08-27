@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/27/2026, 2:00:58 PM ET
+// Last updated: 8/27/2026, 2:02:34 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -33,7 +33,7 @@ const UPCOMING_EVENTS = [
     "dateNote": ""
   },
   {
-    "title": "Wrightsville Beach Elementary",
+    "title": "Wrightsville Beach Elementary Back to School Night",
     "day": "2",
     "mo": "OCTOBER",
     "detail": "Helping students of WBS play games, get prizes, etc.",
