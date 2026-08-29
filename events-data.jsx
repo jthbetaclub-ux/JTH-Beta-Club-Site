@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/29/2026, 12:55:19 PM ET
+// Last updated: 8/29/2026, 12:56:26 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -8,8 +8,8 @@ const UPCOMING_EVENTS = [
     "mo": "SEPTEMBER",
     "detail": "Passing out waters and helping runners with direction",
     "spots": "5",
-    "url": "",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65393612-liam",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65393612-liam",
+    "url2": "",
     "dateNote": ""
   },
   {
