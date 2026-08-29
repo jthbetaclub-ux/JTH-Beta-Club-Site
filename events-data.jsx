@@ -1,17 +1,7 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/29/2026, 12:32:18 PM ET
+// Last updated: 8/29/2026, 12:55:19 PM ET
 
 const UPCOMING_EVENTS = [
-  {
-    "title": "Alliance for Cape Fear Trees",
-    "day": "14, 15",
-    "mo": "NOVEMBER",
-    "detail": "Planting trees in downtown Wilmington!",
-    "spots": "50 (25 per day)",
-    "url": "https://allianceforcapefeartrees.app.neoncrm.com/forms/volunteer?opportunityId=65",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65296647-alliance",
-    "dateNote": "test"
-  },
   {
     "title": "Liam Strong Charity Beach Run",
     "day": "20",
@@ -20,6 +10,16 @@ const UPCOMING_EVENTS = [
     "spots": "5",
     "url": "",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65393612-liam",
+    "dateNote": ""
+  },
+  {
+    "title": "Wrightsville Beach Elementary Back to School Night",
+    "day": "2",
+    "mo": "OCTOBER",
+    "detail": "Helping students of WBS play games, get prizes, etc.",
+    "spots": "30",
+    "url": "https://www.signupgenius.com/go/20F094CAEA82CA0FA7-65412542-fall",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65433465-wrightsville",
     "dateNote": ""
   },
   {
@@ -33,13 +33,13 @@ const UPCOMING_EVENTS = [
     "dateNote": ""
   },
   {
-    "title": "Wrightsville Beach Elementary Back to School Night",
-    "day": "2",
-    "mo": "OCTOBER",
-    "detail": "Helping students of WBS play games, get prizes, etc.",
-    "spots": "30",
-    "url": "https://www.signupgenius.com/go/20F094CAEA82CA0FA7-65412542-fall",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65433465-wrightsville",
+    "title": "Alliance for Cape Fear Trees",
+    "day": "14, 15",
+    "mo": "NOVEMBER",
+    "detail": "Planting trees in downtown Wilmington!",
+    "spots": "50 (25 per day)",
+    "url": "https://allianceforcapefeartrees.app.neoncrm.com/forms/volunteer?opportunityId=65",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65296647-alliance",
     "dateNote": ""
   }
 ];
