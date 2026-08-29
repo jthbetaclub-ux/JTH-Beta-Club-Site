@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/29/2026, 12:56:26 PM ET
+// Last updated: 8/29/2026, 12:56:36 PM ET
 
 const UPCOMING_EVENTS = [
   {
