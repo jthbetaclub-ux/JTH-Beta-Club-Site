@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/29/2026, 12:31:30 PM ET
+// Last updated: 8/29/2026, 12:32:18 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -10,7 +10,7 @@ const UPCOMING_EVENTS = [
     "spots": "50 (25 per day)",
     "url": "https://allianceforcapefeartrees.app.neoncrm.com/forms/volunteer?opportunityId=65",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65296647-alliance",
-    "dateNote": ""
+    "dateNote": "test"
   },
   {
     "title": "Liam Strong Charity Beach Run",
