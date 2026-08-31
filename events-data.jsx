@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/29/2026, 12:56:36 PM ET
+// Last updated: 8/30/2026, 10:58:17 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -20,6 +20,16 @@ const UPCOMING_EVENTS = [
     "spots": "30",
     "url": "https://www.signupgenius.com/go/20F094CAEA82CA0FA7-65412542-fall",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65433465-wrightsville",
+    "dateNote": ""
+  },
+  {
+    "title": "Go Time Timing Company",
+    "day": "3",
+    "mo": "OCTOBER",
+    "detail": "Multiple jobs including: Directional, water stops, packet pick up ",
+    "spots": "40",
+    "url": "https://runsignup.com/Race/Volunteer/NC/Wilmington/RunfortheTaTas",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65481288-gotime#/",
     "dateNote": ""
   },
   {
@@ -52,6 +62,14 @@ const RECURRING_EVENTS = [
     "spots": "10",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65222472-pine",
     "url2": ""
+  },
+  {
+    "title": "IRONMAN 70.3 North Carolina",
+    "dates": "10/14-10/18",
+    "detail": "There are a variety of job opportunities - everything from directing and cheering on athletes, helping to move their gear bags, and much more",
+    "spots": "As many as possible!",
+    "url": "https://ironman.volunteerlocal.com/volunteer/?id=106148",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65481478-ironman#/"
   }
 ];
 
