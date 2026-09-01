@@ -1,7 +1,17 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 8/30/2026, 10:58:17 PM ET
+// Last updated: 9/1/2026, 4:53:01 PM ET
 
 const UPCOMING_EVENTS = [
+  {
+    "title": "St. Mark Catholic School 5k Fundraiser",
+    "day": "9",
+    "mo": "SEPTEMBER",
+    "detail": "We need help monitoring our 5K course and clean-up at the end.",
+    "spots": "20",
+    "url": "https://www.lionpride5k.com/Race/Volunteer/NC/Wilmington/StmarkLionPride5K",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65509124-stmark#/",
+    "dateNote": ""
+  },
   {
     "title": "Liam Strong Charity Beach Run",
     "day": "20",
