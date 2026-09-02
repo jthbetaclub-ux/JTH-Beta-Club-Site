@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/1/2026, 4:53:01 PM ET
+// Last updated: 9/1/2026, 10:25:31 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -19,7 +19,17 @@ const UPCOMING_EVENTS = [
     "detail": "Passing out waters and helping runners with direction",
     "spots": "5",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65393612-liam",
-    "url2": "",
+    "url2": "None",
+    "dateNote": ""
+  },
+  {
+    "title": "Wrightsville Beach Sprint Triathlon",
+    "day": "26",
+    "mo": "SEPTEMBER",
+    "detail": "Volunteers will be needed to assist with set up, tear down, water stations and other needs.",
+    "spots": "200",
+    "url": "https://ymcasenc.volunteermatters.org/project-catalog/56",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65551010-wrightsville",
     "dateNote": ""
   },
   {
@@ -71,7 +81,7 @@ const RECURRING_EVENTS = [
     "detail": "Volunteers will help serve a meal, set up, clean up, wash dishes, and assist attendees to their tables.",
     "spots": "10",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65222472-pine",
-    "url2": ""
+    "url2": "None"
   },
   {
     "title": "IRONMAN 70.3 North Carolina",
@@ -80,6 +90,22 @@ const RECURRING_EVENTS = [
     "spots": "As many as possible!",
     "url": "https://ironman.volunteerlocal.com/volunteer/?id=106148",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65481478-ironman#/"
+  },
+  {
+    "title": "Trask Family Farms",
+    "dates": "9/19-11/01",
+    "detail": "Volunteers will assist with welcoming guests, helping visitors throughout the farm, staffing activity areas, answering questions, restocking pumpkin carts, and helping keep the farm clean and organized.",
+    "spots": "15",
+    "url": "https://www.signupgenius.com/go/20F0D4DACA923A1F9C07-65010771-trask#/",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65550103-trask"
+  },
+  {
+    "title": "Miracle League",
+    "dates": "9/12-11/07",
+    "detail": " An accessible baseball league for children and adults living with disabilities. ",
+    "spots": "80-100",
+    "url": "https://www.signupgenius.com/go/508084BACAC29A4FF2-64806659-volunteer#/",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65550645-miracle"
   }
 ];
 
