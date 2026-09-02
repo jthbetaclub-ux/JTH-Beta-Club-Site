@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/1/2026, 10:30:07 PM ET
+// Last updated: 9/2/2026, 7:26:00 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -50,6 +50,16 @@ const UPCOMING_EVENTS = [
     "spots": "40",
     "url": "https://runsignup.com/Race/Volunteer/NC/Wilmington/RunfortheTaTas",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65481288-gotime#/",
+    "dateNote": ""
+  },
+  {
+    "title": "Cape Fear Buddy Walk",
+    "day": "3",
+    "mo": "OCTOBER",
+    "detail": "SIGN UP FOR SETUP AND CLEANUP SHIFTS ONLY",
+    "spots": "30",
+    "url": "https://www.signupgenius.com/go/10C0F4AAFAE2AA4F8C16-57957698-cape#/",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65554576-cape",
     "dateNote": ""
   },
   {
