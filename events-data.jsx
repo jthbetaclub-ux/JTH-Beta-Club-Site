@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/2/2026, 7:26:00 PM ET
+// Last updated: 9/3/2026, 7:35:08 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -10,6 +10,16 @@ const UPCOMING_EVENTS = [
     "spots": "20",
     "url": "https://www.lionpride5k.com/Race/Volunteer/NC/Wilmington/StmarkLionPride5K",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65509124-stmark#/",
+    "dateNote": ""
+  },
+  {
+    "title": "The NICU Family Collective",
+    "day": "20",
+    "mo": "SEPTEMBER",
+    "detail": "Helping put on an event for NICU Awareness Month",
+    "spots": "24",
+    "url": "https://www.signupgenius.com/go/4090D4DAAAE2AA5FB6-65455586-2026#/",
+    "url2": "",
     "dateNote": ""
   },
   {
@@ -108,6 +118,14 @@ const RECURRING_EVENTS = [
     "spots": "15",
     "url": "https://www.signupgenius.com/go/20F0D4DACA923A1F9C07-65010771-trask#/",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65550103-trask"
+  },
+  {
+    "title": "Wesley Memorial UMC - Pumpkin Patch",
+    "dates": "9/26-10/31",
+    "detail": "Unloading pumpkins from the trucks, helping patch customers",
+    "spots": "As many as possible!",
+    "url": "https://signup.com/client/invitation2/secure/241908208031/false#/invitation",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65603458-wesley"
   },
   {
     "title": "IRONMAN 70.3 North Carolina",
