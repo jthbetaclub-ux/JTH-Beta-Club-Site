@@ -750,13 +750,27 @@ function SlidesPage({ fonts, setPage }) {
         Presentations from our meetings will be posted here when available.
       </p>
 
-      <div style={{ border: `2.5px solid ${navy}`, padding: mobile ? '48px 24px' : '72px 48px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, textAlign: 'center', background: '#fff' }}>
-        <div style={{ width: 64, height: 64, background: yellow, border: `2.5px solid ${navy}`, display: 'grid', placeItems: 'center', fontFamily: fonts.head, fontWeight: 900, fontSize: 28, transform: 'rotate(-4deg)', boxShadow: `4px 4px 0 ${navy}`, flexShrink: 0 }}>▶</div>
-        <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 22 : 28, textTransform: 'uppercase', letterSpacing: '-.02em', lineHeight: 1 }}>No presentations yet</div>
-        <p style={{ fontSize: 15, lineHeight: 1.6, margin: 0, fontWeight: 500, maxWidth: 480, color: 'rgba(4,41,78,.7)' }}>
-          Check back after meetings. Slides will be added here when they're ready.
-        </p>
-      </div>
+      {[
+        { title: 'Fall 2026 Meeting Presentation', id: '13KYCoaCFYQHcrOlKRKovwuK9Rlbt_EXQBmWmkGyTIKg' },
+      ].map((slide, i) => (
+        <div key={i} style={{ border: `2.5px solid ${navy}`, background: '#fff', marginBottom: mobile ? 24 : 32, boxShadow: `8px 8px 0 ${yellow}` }}>
+          <div style={{ background: navy, color: '#fff', padding: '16px 24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <div style={{ width: 28, height: 28, background: yellow, display: 'grid', placeItems: 'center', fontFamily: fonts.head, fontWeight: 900, fontSize: 13, color: navy, flexShrink: 0 }}>{'▶'}</div>
+              <span style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 15 : 17, textTransform: 'uppercase', letterSpacing: '-.01em' }}>{slide.title}</span>
+            </div>
+            <a href={'https://docs.google.com/presentation/d/' + slide.id + '/edit'} target="_blank" rel="noopener noreferrer" style={{ fontSize: 12, color: 'rgba(255,255,255,.6)', textDecoration: 'none', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '.04em' }}>{'Open in Slides ↗'}</a>
+          </div>
+          <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%' }}>
+            <iframe
+              src={'https://docs.google.com/presentation/d/' + slide.id + '/embed?start=false&loop=false&delayms=3000'}
+              frameBorder="0"
+              allowFullScreen={true}
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0, display: 'block' }}
+            />
+          </div>
+        </div>
+      ))}
     </main>
   );
 }
