@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/3/2026, 8:14:02 PM ET
+// Last updated: 9/4/2026, 9:12:20 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -19,7 +19,7 @@ const UPCOMING_EVENTS = [
     "detail": "Helping put on an event for NICU Awareness Month",
     "spots": "24",
     "url": "https://www.signupgenius.com/go/4090D4DAAAE2AA5FB6-65455586-2026#/",
-    "url2": "",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65583145-thenicu",
     "dateNote": ""
   },
   {
