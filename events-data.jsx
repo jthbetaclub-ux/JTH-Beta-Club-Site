@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/3/2026, 7:35:08 PM ET
+// Last updated: 9/3/2026, 8:14:02 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -40,6 +40,16 @@ const UPCOMING_EVENTS = [
     "spots": "200",
     "url": "https://ymcasenc.volunteermatters.org/project-catalog/56",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65551010-wrightsville",
+    "dateNote": ""
+  },
+  {
+    "title": "Winter Park Elementary",
+    "day": "24",
+    "mo": "SEPTEMBER",
+    "detail": "Students will be working stations, calling BINGO and serving food",
+    "spots": "10",
+    "url": "https://signup.com/client/invitation2/secure/822911918086/false#/invitation",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65604306-winter",
     "dateNote": ""
   },
   {
