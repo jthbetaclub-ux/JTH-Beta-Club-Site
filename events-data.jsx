@@ -1,17 +1,7 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/4/2026, 9:12:20 AM ET
+// Last updated: 9/13/2026, 1:54:36 PM ET
 
 const UPCOMING_EVENTS = [
-  {
-    "title": "St. Mark Catholic School 5k Fundraiser",
-    "day": "9",
-    "mo": "SEPTEMBER",
-    "detail": "We need help monitoring our 5K course and clean-up at the end.",
-    "spots": "20",
-    "url": "https://www.lionpride5k.com/Race/Volunteer/NC/Wilmington/StmarkLionPride5K",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65509124-stmark#/",
-    "dateNote": ""
-  },
   {
     "title": "The NICU Family Collective",
     "day": "20",
