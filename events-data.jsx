@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/13/2026, 1:54:36 PM ET
+// Last updated: 9/16/2026, 6:57:17 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -43,6 +43,16 @@ const UPCOMING_EVENTS = [
     "dateNote": ""
   },
   {
+    "title": "UpTheGood Foundation Powered By REV",
+    "day": "27",
+    "mo": "SEPTEMBER",
+    "detail": "Setting up the racecourse, water stations, course sweep, handing out medals and waters",
+    "spots": "14+",
+    "url": "https://www.signupgenius.com/go/10C094EADA82AA2FEC16-65150266-recess#/",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65935756-upthegood",
+    "dateNote": ""
+  },
+  {
     "title": "Wrightsville Beach Elementary Back to School Night",
     "day": "2",
     "mo": "OCTOBER",
@@ -70,6 +80,26 @@ const UPCOMING_EVENTS = [
     "spots": "30",
     "url": "https://www.signupgenius.com/go/10C0F4AAFAE2AA4F8C16-57957698-cape#/",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65554576-cape",
+    "dateNote": ""
+  },
+  {
+    "title": "John T Hoggard PTSO ",
+    "day": "10",
+    "mo": "OCTOBER",
+    "detail": "Help set up the homecoming dance ",
+    "spots": "20",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65935482-hoggard",
+    "url2": "None",
+    "dateNote": ""
+  },
+  {
+    "title": "John T Hoggard PTSO ",
+    "day": "10",
+    "mo": "OCTOBER",
+    "detail": "Breaking down the homecoming dance and cleaning up the decorations ",
+    "spots": "5",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65935646-hoggard",
+    "url2": "None",
     "dateNote": ""
   },
   {
