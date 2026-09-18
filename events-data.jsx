@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/18/2026, 9:55:02 AM ET
+// Last updated: 9/18/2026, 9:55:52 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -19,7 +19,7 @@ const UPCOMING_EVENTS = [
     "detail": "Passing out waters and helping runners with direction",
     "spots": "5",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65393612-liam",
-    "url2": "None",
+    "url2": "",
     "dateNote": ""
   },
   {
@@ -89,7 +89,7 @@ const UPCOMING_EVENTS = [
     "detail": "Help set up the homecoming dance ",
     "spots": "20",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65935482-hoggard",
-    "url2": "None",
+    "url2": "",
     "dateNote": ""
   },
   {
@@ -99,7 +99,7 @@ const UPCOMING_EVENTS = [
     "detail": "Breaking down the homecoming dance and cleaning up the decorations ",
     "spots": "5",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65935646-hoggard",
-    "url2": "None",
+    "url2": "",
     "dateNote": ""
   },
   {
