@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/21/2026, 10:28:06 AM ET
+// Last updated: 9/21/2026, 11:44:26 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -151,7 +151,7 @@ const RECURRING_EVENTS = [
     "detail": "Volunteers will help serve a meal, set up, clean up, wash dishes, and assist attendees to their tables.",
     "spots": "10",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65222472-pine",
-    "url2": "None"
+    "url2": ""
   },
   {
     "title": "Miracle League",
