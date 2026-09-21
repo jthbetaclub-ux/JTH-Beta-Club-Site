@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/18/2026, 9:55:52 AM ET
+// Last updated: 9/21/2026, 9:53:28 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -99,6 +99,16 @@ const UPCOMING_EVENTS = [
     "detail": "Breaking down the homecoming dance and cleaning up the decorations ",
     "spots": "5",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65935646-hoggard",
+    "url2": "",
+    "dateNote": ""
+  },
+  {
+    "title": "Anthony's Way - The Road to Kindness",
+    "day": "26",
+    "mo": "OCTOBER",
+    "detail": "Helping to set up tents, tables, organize tabletop items, sell raffle tickets, help with the dice roll stations",
+    "spots": "10",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66030770-anthonys",
     "url2": "",
     "dateNote": ""
   },
