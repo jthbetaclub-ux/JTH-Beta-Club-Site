@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/21/2026, 11:44:26 AM ET
+// Last updated: 9/21/2026, 12:22:30 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -23,16 +23,6 @@ const UPCOMING_EVENTS = [
     "dateNote": ""
   },
   {
-    "title": "Wrightsville Beach Sprint Triathlon",
-    "day": "26",
-    "mo": "SEPTEMBER",
-    "detail": "Volunteers will be needed to assist with set up, tear down, water stations and other needs.",
-    "spots": "200",
-    "url": "https://ymcasenc.volunteermatters.org/project-catalog/56",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65551010-wrightsville",
-    "dateNote": ""
-  },
-  {
     "title": "Winter Park Elementary",
     "day": "24",
     "mo": "SEPTEMBER",
@@ -40,6 +30,16 @@ const UPCOMING_EVENTS = [
     "spots": "10",
     "url": "https://signup.com/client/invitation2/secure/822911918086/false#/invitation",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65604306-winter",
+    "dateNote": ""
+  },
+  {
+    "title": "Wrightsville Beach Sprint Triathlon",
+    "day": "26",
+    "mo": "SEPTEMBER",
+    "detail": "Volunteers will be needed to assist with set up, tear down, water stations and other needs.",
+    "spots": "200",
+    "url": "https://ymcasenc.volunteermatters.org/project-catalog/56",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65551010-wrightsville",
     "dateNote": ""
   },
   {
@@ -99,6 +99,16 @@ const UPCOMING_EVENTS = [
     "detail": "Breaking down the homecoming dance and cleaning up the decorations ",
     "spots": "5",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65935646-hoggard",
+    "url2": "",
+    "dateNote": ""
+  },
+  {
+    "title": "Wilmington Road Runners Club",
+    "day": "24",
+    "mo": "OCTOBER",
+    "detail": "Students will direct runners and bring energy and cheers to keep our runners motivated",
+    "spots": "20",
+    "url": "",
     "url2": "",
     "dateNote": ""
   },
