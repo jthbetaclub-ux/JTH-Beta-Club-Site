@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/21/2026, 9:53:28 AM ET
+// Last updated: 9/21/2026, 10:28:06 AM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -130,6 +130,16 @@ const UPCOMING_EVENTS = [
     "spots": "50 (25 per day)",
     "url": "https://allianceforcapefeartrees.app.neoncrm.com/forms/volunteer?opportunityId=65",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65296647-alliance",
+    "dateNote": ""
+  },
+  {
+    "title": "Cape Fear Habitat for Humanity Turkey Trot",
+    "day": "26",
+    "mo": "NOVEMBER",
+    "detail": "Course monitors ",
+    "spots": "20",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66031696-cape",
+    "url2": "",
     "dateNote": ""
   }
 ];
