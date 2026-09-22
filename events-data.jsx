@@ -1,27 +1,7 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/21/2026, 9:29:27 PM ET
+// Last updated: 9/21/2026, 9:36:44 PM ET
 
 const UPCOMING_EVENTS = [
-  {
-    "title": "The NICU Family Collective",
-    "day": "20",
-    "mo": "SEPTEMBER",
-    "detail": "Helping put on an event for NICU Awareness Month",
-    "spots": "24",
-    "url": "https://www.signupgenius.com/go/4090D4DAAAE2AA5FB6-65455586-2026#/",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65583145-thenicu",
-    "dateNote": ""
-  },
-  {
-    "title": "Liam Strong Charity Beach Run",
-    "day": "20",
-    "mo": "SEPTEMBER",
-    "detail": "Passing out waters and helping runners with direction",
-    "spots": "5",
-    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65393612-liam",
-    "url2": "",
-    "dateNote": ""
-  },
   {
     "title": "Winter Park Elementary",
     "day": "24",
