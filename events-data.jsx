@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/21/2026, 12:22:30 PM ET
+// Last updated: 9/21/2026, 9:29:27 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -30,6 +30,16 @@ const UPCOMING_EVENTS = [
     "spots": "10",
     "url": "https://signup.com/client/invitation2/secure/822911918086/false#/invitation",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65604306-winter",
+    "dateNote": ""
+  },
+  {
+    "title": "Cape Fear Latinos",
+    "day": "25, 26",
+    "mo": "SEPTEMBER",
+    "detail": "Helping set up and help move things around, help with our tables and help us take everthing down after the festival. ",
+    "spots": "20-30",
+    "url": "https://www.signupgenius.com/go/10C094FABAD2EA1F5C52-65257422-cflfestival#/",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66062345-cape",
     "dateNote": ""
   },
   {
