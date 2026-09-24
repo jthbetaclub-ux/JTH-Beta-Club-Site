@@ -814,8 +814,8 @@ function ApplicationsPage({ fonts, setPage }) {
       <div style={{ border: `2.5px solid ${navy}`, background: yellow, padding: mobile ? '24px 24px' : '28px 36px', marginBottom: mobile ? 36 : 56, display: 'flex', alignItems: mobile ? 'flex-start' : 'center', gap: 16, flexDirection: mobile ? 'column' : 'row', boxShadow: `6px 6px 0 ${navy}` }}>
         <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: 28, lineHeight: 1, flexShrink: 0 }}>✕</div>
         <div>
-          <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 20 : 24, textTransform: 'uppercase', letterSpacing: '-.01em', lineHeight: 1, marginBottom: 6 }}>Applications are closed for 2025-2026</div>
-          <p style={{ fontSize: 15, lineHeight: 1.55, margin: 0, fontWeight: 500 }}>The application window for the current school year has passed. Check back in the fall when new membership applications open.</p>
+          <div style={{ fontFamily: fonts.head, fontWeight: 900, fontSize: mobile ? 20 : 24, textTransform: 'uppercase', letterSpacing: '-.01em', lineHeight: 1, marginBottom: 6 }}>Applications open in January for 2026-2027</div>
+          <p style={{ fontSize: 15, lineHeight: 1.55, margin: 0, fontWeight: 500 }}>New membership applications for the 2026-2027 school year will open in January. Please check back here after winter break!</p>
         </div>
       </div>
 
