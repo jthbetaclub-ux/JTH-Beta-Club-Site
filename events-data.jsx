@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/25/2026, 9:56:29 PM ET
+// Last updated: 9/26/2026, 12:46:50 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -88,8 +88,8 @@ const UPCOMING_EVENTS = [
     "mo": "OCTOBER",
     "detail": "Students will direct runners and bring energy and cheers to keep our runners motivated",
     "spots": "20",
-    "url": "",
-    "url2": "",
+    "url": "https://runsignup.com/Race/Volunteer/NC/WrightsvilleBeach/SeasideShuffle5k",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66193228-wilmington",
     "dateNote": ""
   },
   {
