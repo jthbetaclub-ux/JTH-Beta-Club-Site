@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/26/2026, 12:55:32 PM ET
+// Last updated: 9/26/2026, 1:04:14 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -90,6 +90,16 @@ const UPCOMING_EVENTS = [
     "spots": "5",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65935646-hoggard",
     "url2": "",
+    "dateNote": ""
+  },
+  {
+    "title": "Holly Tree PTA",
+    "day": "16",
+    "mo": "OCTOBER",
+    "detail": "Assisting with set up, kids games, concessions, clean up, etc",
+    "spots": "51",
+    "url": "https://signup.com/client/invitation2/secure/1093026680106/false#/invitation",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66193445-holly",
     "dateNote": ""
   },
   {
