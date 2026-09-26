@@ -1,17 +1,7 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/21/2026, 9:36:44 PM ET
+// Last updated: 9/25/2026, 9:56:29 PM ET
 
 const UPCOMING_EVENTS = [
-  {
-    "title": "Winter Park Elementary",
-    "day": "24",
-    "mo": "SEPTEMBER",
-    "detail": "Students will be working stations, calling BINGO and serving food",
-    "spots": "10",
-    "url": "https://signup.com/client/invitation2/secure/822911918086/false#/invitation",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65604306-winter",
-    "dateNote": ""
-  },
   {
     "title": "Cape Fear Latinos",
     "day": "25, 26",
