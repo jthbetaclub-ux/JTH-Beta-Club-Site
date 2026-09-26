@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/26/2026, 12:46:50 PM ET
+// Last updated: 9/26/2026, 12:55:32 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -60,6 +60,16 @@ const UPCOMING_EVENTS = [
     "spots": "30",
     "url": "https://www.signupgenius.com/go/10C0F4AAFAE2AA4F8C16-57957698-cape#/",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65554576-cape",
+    "dateNote": ""
+  },
+  {
+    "title": "College Park Elementary School",
+    "day": "8",
+    "mo": "OCTOBER",
+    "detail": "Family Night-The School Scoop- passing out ice cream cups to family's after they visit their classroom teacher",
+    "spots": "10",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66193345-college",
+    "url2": "",
     "dateNote": ""
   },
   {
