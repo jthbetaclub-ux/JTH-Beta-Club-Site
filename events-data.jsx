@@ -1,27 +1,7 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/26/2026, 1:04:14 PM ET
+// Last updated: 9/27/2026, 11:24:23 AM ET
 
 const UPCOMING_EVENTS = [
-  {
-    "title": "Cape Fear Latinos",
-    "day": "25, 26",
-    "mo": "SEPTEMBER",
-    "detail": "Helping set up and help move things around, help with our tables and help us take everthing down after the festival. ",
-    "spots": "20-30",
-    "url": "https://www.signupgenius.com/go/10C094FABAD2EA1F5C52-65257422-cflfestival#/",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66062345-cape",
-    "dateNote": ""
-  },
-  {
-    "title": "Wrightsville Beach Sprint Triathlon",
-    "day": "26",
-    "mo": "SEPTEMBER",
-    "detail": "Volunteers will be needed to assist with set up, tear down, water stations and other needs.",
-    "spots": "200",
-    "url": "https://ymcasenc.volunteermatters.org/project-catalog/56",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65551010-wrightsville",
-    "dateNote": ""
-  },
   {
     "title": "UpTheGood Foundation Powered By REV",
     "day": "27",
