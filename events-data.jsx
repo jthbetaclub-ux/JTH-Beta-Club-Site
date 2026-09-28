@@ -1,17 +1,7 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/27/2026, 11:24:23 AM ET
+// Last updated: 9/28/2026, 1:21:45 PM ET
 
 const UPCOMING_EVENTS = [
-  {
-    "title": "UpTheGood Foundation Powered By REV",
-    "day": "27",
-    "mo": "SEPTEMBER",
-    "detail": "Setting up the racecourse, water stations, course sweep, handing out medals and waters",
-    "spots": "14+",
-    "url": "https://www.signupgenius.com/go/10C094EADA82AA2FEC16-65150266-recess#/",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65935756-upthegood",
-    "dateNote": ""
-  },
   {
     "title": "Wrightsville Beach Elementary Back to School Night",
     "day": "2",
