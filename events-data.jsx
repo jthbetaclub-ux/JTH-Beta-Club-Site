@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/28/2026, 1:21:45 PM ET
+// Last updated: 9/28/2026, 2:34:02 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -110,6 +110,16 @@ const UPCOMING_EVENTS = [
     "spots": "50 (25 per day)",
     "url": "https://allianceforcapefeartrees.app.neoncrm.com/forms/volunteer?opportunityId=65",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65296647-alliance",
+    "dateNote": ""
+  },
+  {
+    "title": "Battleship Half Marathon ",
+    "day": "14, 15",
+    "mo": "NOVEMBER",
+    "detail": "Directing runners, helping at the finish line, cleaning and setting up ",
+    "spots": "40",
+    "url": "https://www.battleshiphalfmarathon.com/Race/Volunteer/NC/Wilmington/BattleshipHalfMarathon#71838",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66242054-battleship",
     "dateNote": ""
   },
   {
