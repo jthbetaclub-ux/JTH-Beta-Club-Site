@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/29/2026, 1:53:47 PM ET
+// Last updated: 9/29/2026, 3:06:26 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -53,6 +53,16 @@ const UPCOMING_EVENTS = [
     "dateNote": ""
   },
   {
+    "title": "YWCA Lower Cape Fear",
+    "day": "9",
+    "mo": "OCTOBER",
+    "detail": "helping to put the tarp on the pool, in preparation for the bubble",
+    "spots": "25",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66286771-ywca",
+    "url2": "",
+    "dateNote": ""
+  },
+  {
     "title": "John T Hoggard PTSO ",
     "day": "10",
     "mo": "OCTOBER",
@@ -69,6 +79,16 @@ const UPCOMING_EVENTS = [
     "detail": "Breaking down the homecoming dance and cleaning up the decorations ",
     "spots": "5",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65935646-hoggard",
+    "url2": "",
+    "dateNote": ""
+  },
+  {
+    "title": "YWCA Lower Cape Fear",
+    "day": "10",
+    "mo": "OCTOBER",
+    "detail": "Helping to put the bubble on the pool and remove the tarp. ",
+    "spots": "40",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66287019-ywca",
     "url2": "",
     "dateNote": ""
   },
