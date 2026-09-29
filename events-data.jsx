@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/28/2026, 2:34:02 PM ET
+// Last updated: 9/29/2026, 1:53:47 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -30,6 +30,16 @@ const UPCOMING_EVENTS = [
     "spots": "30",
     "url": "https://www.signupgenius.com/go/10C0F4AAFAE2AA4F8C16-57957698-cape#/",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65554576-cape",
+    "dateNote": ""
+  },
+  {
+    "title": "Fat Cat Pottery",
+    "day": "3",
+    "mo": "OCTOBER",
+    "detail": "Parking assistants (giving directions), Poping tents/tables and break down at end of day",
+    "spots": "14",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66261537-fatcat#/",
+    "url2": "",
     "dateNote": ""
   },
   {
@@ -174,6 +184,14 @@ const RECURRING_EVENTS = [
     "spots": "As many as possible!",
     "url": "https://ironman.volunteerlocal.com/volunteer/?id=106148",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65481478-ironman#/"
+  },
+  {
+    "title": "Healthy Kids Running Series",
+    "dates": "10/11-11/08 (SUNDAYS)",
+    "detail": "Assisting me with race day logistics (setting up the course, timing runners, time recorder, registration table support, stretch leaders, race starters)",
+    "spots": "8 per day",
+    "url": "https://runsignup.com/hkrswilmingtonnc/volunteer?_gl=1*uoflt2*_ga*MTYzMjQxMzk0MC4xNzM2Nzc1NjA0*_ga_JD7D2K6YXQ*czE3ODg0NTYwNTgkbzc4JGcxJHQxNzg4NDU2MDU5JGo1OSRsMCRoMA..",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66265684-healthy#/"
   }
 ];
 
