@@ -1,47 +1,7 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 9/29/2026, 3:06:26 PM ET
+// Last updated: 10/4/2026, 11:33:57 PM ET
 
 const UPCOMING_EVENTS = [
-  {
-    "title": "Wrightsville Beach Elementary Back to School Night",
-    "day": "2",
-    "mo": "OCTOBER",
-    "detail": "Helping students of WBS play games, get prizes, etc.",
-    "spots": "30",
-    "url": "https://www.signupgenius.com/go/20F094CAEA82CA0FA7-65412542-fall",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65433465-wrightsville",
-    "dateNote": ""
-  },
-  {
-    "title": "Go Time Timing Company",
-    "day": "3",
-    "mo": "OCTOBER",
-    "detail": "Multiple jobs including: Directional, water stops, packet pick up ",
-    "spots": "40",
-    "url": "https://runsignup.com/Race/Volunteer/NC/Wilmington/RunfortheTaTas",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65481288-gotime#/",
-    "dateNote": ""
-  },
-  {
-    "title": "Cape Fear Buddy Walk",
-    "day": "3",
-    "mo": "OCTOBER",
-    "detail": "SIGN UP FOR SETUP AND CLEANUP SHIFTS ONLY",
-    "spots": "30",
-    "url": "https://www.signupgenius.com/go/10C0F4AAFAE2AA4F8C16-57957698-cape#/",
-    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-65554576-cape",
-    "dateNote": ""
-  },
-  {
-    "title": "Fat Cat Pottery",
-    "day": "3",
-    "mo": "OCTOBER",
-    "detail": "Parking assistants (giving directions), Poping tents/tables and break down at end of day",
-    "spots": "14",
-    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66261537-fatcat#/",
-    "url2": "",
-    "dateNote": ""
-  },
   {
     "title": "College Park Elementary School",
     "day": "8",
