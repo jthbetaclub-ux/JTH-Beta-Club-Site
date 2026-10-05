@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 10/4/2026, 11:33:57 PM ET
+// Last updated: 10/5/2026, 3:02:37 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -120,6 +120,16 @@ const UPCOMING_EVENTS = [
     "spots": "20",
     "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66031696-cape",
     "url2": "",
+    "dateNote": ""
+  },
+  {
+    "title": "Wilmington Historic Half, 10K & 5K",
+    "day": "5",
+    "mo": "DECEMBER",
+    "detail": "Handing out water/Gatorade at aid stations, finish line help, along the course cheering ",
+    "spots": "20",
+    "url": "https://runsignup.com/Race/Volunteer/NC/Wilmington/RunHistoricWilmington",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66446583-wilmington",
     "dateNote": ""
   }
 ];
