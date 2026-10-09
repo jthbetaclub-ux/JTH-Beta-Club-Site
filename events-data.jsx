@@ -1,5 +1,5 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 10/5/2026, 3:02:37 PM ET
+// Last updated: 10/8/2026, 11:44:26 PM ET
 
 const UPCOMING_EVENTS = [
   {
@@ -63,6 +63,16 @@ const UPCOMING_EVENTS = [
     "dateNote": ""
   },
   {
+    "title": "Winter Park Elementary",
+    "day": "17",
+    "mo": "OCTOBER",
+    "detail": "Working various stations during Trunk Or Treat",
+    "spots": "17",
+    "url": "https://signup.com/client/invitation2/secure/121369405403/false#/invitation",
+    "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66597384-winter",
+    "dateNote": ""
+  },
+  {
     "title": "Wilmington Road Runners Club",
     "day": "24",
     "mo": "OCTOBER",
@@ -70,6 +80,16 @@ const UPCOMING_EVENTS = [
     "spots": "20",
     "url": "https://runsignup.com/Race/Volunteer/NC/WrightsvilleBeach/SeasideShuffle5k",
     "url2": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66193228-wilmington",
+    "dateNote": ""
+  },
+  {
+    "title": "St. James Day School",
+    "day": "24",
+    "mo": "OCTOBER",
+    "detail": "Helping preschool students play games, awarding prizes, and cleaning up behind guests at our preschool fall festival",
+    "spots": "20",
+    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66597348-stjames",
+    "url2": "",
     "dateNote": ""
   },
   {
