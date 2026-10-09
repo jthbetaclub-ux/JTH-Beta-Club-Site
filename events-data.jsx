@@ -1,17 +1,7 @@
 // events-data.jsx ? Auto-generated. Do not edit manually.
-// Last updated: 10/8/2026, 11:44:26 PM ET
+// Last updated: 10/8/2026, 11:47:35 PM ET
 
 const UPCOMING_EVENTS = [
-  {
-    "title": "College Park Elementary School",
-    "day": "8",
-    "mo": "OCTOBER",
-    "detail": "Family Night-The School Scoop- passing out ice cream cups to family's after they visit their classroom teacher",
-    "spots": "10",
-    "url": "https://www.signupgenius.com/go/4090449ADA928A5FC1-66193345-college",
-    "url2": "",
-    "dateNote": ""
-  },
   {
     "title": "YWCA Lower Cape Fear",
     "day": "9",
